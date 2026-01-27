@@ -1,0 +1,127 @@
+.delivery-types-section {
+    width: 100%;
+    margin-bottom: 1000px;
+}
+
+.delivery-types-container {
+    max-width: 1519px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.delivery-title {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 300;
+    font-size: 55px;
+    line-height: 125%;
+    color: #3F3F3F;
+    text-transform: uppercase;
+    margin-bottom: 52px;
+    text-align: start;
+}
+
+.delivery-title span {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 600;
+}
+
+.delivery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.delivery-card {
+    position: relative;
+    max-width: 482px;
+    min-height: 261px;
+    background: #FFFFFF;
+    border-radius: 30px;
+    padding: 20px;
+    overflow: hidden; 
+}
+
+
+.circle-bg {
+    position: absolute;
+    top: 15px; 
+    left: 340px;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 300px;
+    z-index: 1;
+}
+
+.circle-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.transport-icon {
+    position: absolute;
+    z-index: 2;
+     top: 79px;
+    right: -44px;
+}
+
+.transport-icon img {
+    width: 361px;
+    height: 227px;
+    object-fit: contain;
+}
+
+.delivery-content {
+    position: absolute;
+    top: 100px;
+}
+
+.delivery-type-title {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    color: #20BD53;
+    margin-bottom: 10px;
+    line-height: 120%;
+    text-align: left;
+}
+
+.delivery-type-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #3F3F3F;
+    line-height: 130%;
+}
+
+/* Анимация при наведении */
+.delivery-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(32, 189, 83, 0.2);
+    transition: all 1s ease;
+}
+
+.delivery-card:hover .circle-bg {
+    transform: translateX(-55%) scale(1.1);
+    transition: transform 1s ease;
+}
+
+@media (max-width: 1200px) {
+    .delivery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .delivery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .delivery-title {
+        font-size: 42px;
+    }
+    
+    .delivery-card {
+        height: 300px;
+    }
+}
