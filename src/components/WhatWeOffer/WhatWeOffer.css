@@ -1,0 +1,240 @@
+.what-we-offer-section {
+    padding: 0px 0 45px 197px; /* Отступ слева 197px */
+    position: relative;
+    overflow: hidden; /* Скрываем все, что выходит за пределы */
+}
+
+.what-we-offer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    padding-right: 197px; /* Балансируем отступ */
+}
+
+.section-title {
+    width: 771px;
+    height: 69px;
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 300;
+    font-size: 55px;
+    color: #3F3F3F;
+    line-height: 125%;
+    text-transform: uppercase;
+    margin: 0;
+}
+.section-title span {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 600;
+    font-size: 55px;
+    color: #3F3F3F;
+    line-height: 125%;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.navigation-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.nav-button {
+    width: 75px;
+    height: 75px;
+    border-radius: 18px;
+    border: 2px solid #3f3f3f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.nav-button img {
+    width: 9px;
+    height: 18px;
+    transition: all 0.3s ease;
+}
+
+.offers-carousel-container {
+    position: relative;
+    width: calc(100vw - 197px); 
+    overflow: visible; 
+}
+
+.offers-carousel-wrapper {
+    width: 100%;
+}
+
+.offers-carousel {
+    display: flex;
+    gap: 40px;
+    transition: transform 0.5s ease;
+    padding-right: 40px; 
+}
+
+.offer-card {
+    position: relative;
+    min-width: 663px;
+    height: 269px; 
+    background: #FFFFFF;
+    border-radius: 30px;
+}
+
+
+
+.icon-image {
+    position: absolute;
+    top: 46px;
+    left: 33px;
+    width: 39px;
+    height: 39px;
+    object-fit: contain;
+}
+
+.offer-title {
+    width: 489px;
+    height: 100px;
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 125%;
+    color: #48C57B;
+    margin-bottom: 20px;
+    margin-left: 95px;
+}
+
+.offer-description {
+    width: 524px;
+    height: 81px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 100%;
+    color: #3F3F3F;
+    flex-grow: 1;
+    margin-left: 95px;
+}
+
+.offer-description span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 100%;
+    color: #3F3F3F;
+}
+
+.offer-card:nth-of-type(2) .offer-description {
+    width: 442px;
+    height: 108px;
+}
+
+.offer-card:nth-of-type(2) .offer-title {
+    height: 50px;
+}
+
+.offer-card:nth-of-type(4) .offer-description {
+    width: 442px;
+    height: 108px;
+}
+
+.offer-card:nth-of-type(4) .offer-title {
+    height: 50px;
+}
+
+.offer-card:nth-of-type(5) .offer-description {
+    width: 442px;
+    height: 108px;
+}
+
+.offer-card:nth-of-type(5) .offer-title {
+    height: 50px;
+}
+
+.offer-card:nth-of-type(6) .offer-description {
+    width: 442px;
+    height: 108px;
+}
+
+.offer-card:nth-of-type(6) .offer-title {
+    height: 50px;
+}
+
+.offer-card:nth-of-type(1) .offer-title {
+    margin-top: 30px;
+}
+
+.offer-card:nth-of-type(1) .offer-description {
+    margin-top: 30px;
+}
+
+.offer-card:nth-of-type(3) .offer-title {
+    margin-top: 30px;
+}
+
+.offer-card:nth-of-type(3) .offer-description {
+    margin-top: 30px;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #DDD;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: #20BD53;
+    transform: scale(1.2);
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .what-we-offer-section {
+        padding-left: 100px;
+    }
+    
+    .what-we-offer-header {
+        padding-right: 100px;
+    }
+    
+    .offers-carousel-container {
+        width: calc(100vw - 100px);
+    }
+}
+
+@media (max-width: 768px) {
+    .what-we-offer-section {
+        padding: 60px 20px 100px 20px;
+    }
+    
+    .what-we-offer-header {
+        padding-right: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+    
+    .offers-carousel-container {
+        width: 100%;
+    }
+    
+    .offer-card {
+        flex: 0 0 calc(100vw - 40px);
+        height: auto;
+        padding: 40px 30px;
+    }
+}
