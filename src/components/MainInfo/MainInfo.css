@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Unbounded:wght@300;600&display=swap');
 
+/* === ОРИГИНАЛЬНЫЕ СТИЛИ ДЛЯ ДЕСКТОПА === */
 .mainInfo-section{
     position: relative;
     width: 100%;
@@ -51,7 +52,7 @@
 }
 
 .airbusImage{
-        position: absolute;
+    position: absolute;
     width: 1470px;
     height: 974px;
     top: -30px;
@@ -77,6 +78,7 @@
     font-size: 51px;
     line-height: 125%;
     color: #FFFFFF;
+    text-align: left;
 }
 
 .info-text-title span {
@@ -94,6 +96,7 @@
     line-height: 100%;
     font-family:  'Montserrat', sans-serif;
     color: #FFFFFF;
+    text-align: left;
 }
 
 .main-click-button{
@@ -121,6 +124,7 @@
     box-shadow: 0px 0px 105px rgba(96, 242, 142, 0.498);
     transition: all 0.3s ease;
     cursor: pointer;
+    text-align: center;
 }
 
 .main-button:hover {
@@ -138,10 +142,14 @@
 .click-button-description{
     width: 407px;
     height: 48px;
-    font-family: 'Montserrat', sans-serif;font-size: 22px;
-     line-height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    line-height: 100%;
+    color: #FFFFFF;
+    text-align: left;
 }
 
+/* === FOOT-BLOCK СТИЛИ ДЛЯ ДЕСКТОПА === */
 .foot-block{
     width: 1519px;
     height: 255px;
@@ -163,7 +171,7 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
     line-height: 100%;
-    align-content: center;
+    text-align: center;
 }
 
 .foot-block-description{
@@ -171,8 +179,8 @@
     top: 115px;
     display: flex;
     justify-content: space-between;
-   width: 1319px;
-   height: 67px;
+    width: 1319px;
+    height: 67px;
 }
 
 .foot-block-description span {
@@ -189,24 +197,556 @@
     font-size: 30px;
     line-height: 100%;
     color: #3F3F3F;
+    text-align: left;
 }
 
 .foot-block-description p:last-child {
     text-align: right;
 }
 
-.count1{
+/* Цифры для десктопа (абсолютное позиционирование) */
+.count1, .count2, .count3 {
     position: absolute;
+    z-index: 1001;
+}
+
+.count1{
     top: 125px;
     left: 78px;
+    width: 40px;
+    height: 57px;
 }
 .count2{
-    position: absolute;
     top: 125px;
     left: 565px;
+    width: 40px;
+    height: 57px;
 }
 .count3{
-    position: absolute;
     top: 125px;
     left: 1175px;
+    width: 40px;
+    height: 57px;
+}
+
+/* Новая структура для мобилок - СКРЫТА НА ДЕСКТОПЕ */
+.guarantee-item {
+    display: none;
+}
+.guarantee-number {
+    display: none;
+}
+
+/* === АДАПТИВНЫЕ СТИЛИ ТОЛЬКО ДЛЯ МЕДИА-ЗАПРОСОВ === */
+
+/* Для экранов до 1600px (немного меньше 1519px + отступы) */
+@media (max-width: 1600px) {
+    .mainInfo-container{
+        padding: 0 40px;
+        box-sizing: border-box;
+    }
+    
+    .info-text {
+        left: 40px;
+    }
+    
+    .logoPanda {
+        left: 40px;
+    }
+
+    .foot-block {
+        width: calc(100% - 80px);
+        max-width: 1519px;
+        box-sizing: border-box;
+    }
+    
+    .foot-block-description {
+        width: calc(100% - 80px);
+        max-width: 1319px;
+        box-sizing: border-box;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .count1 {
+        left: 40px;
+    }
+    
+    .count2 {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .count3 {
+        left: auto;
+        right: 40px;
+    }
+}
+
+/* Для планшетов и небольших ноутбуков (1200px) */
+@media (max-width: 1200px) {
+    .mainInfo-section {
+        height: 900px;
+        border-bottom-left-radius: 80px;
+        border-bottom-right-radius: 80px;
+    }
+    
+    .mainInfo-container {
+        padding: 0 30px;
+    }
+    
+    .info-text {
+        top: 250px;
+        left: 30px;
+        max-width: 600px;
+    }
+    
+    .logoPanda {
+        left: 30px;
+    }
+    
+    .airbusImage {
+        width: 1000px;
+        right: -300px;
+    }
+    
+    .info-text-title {
+        font-size: 42px;
+    }
+    
+    .info-text-title span {
+        font-size: 42px;
+    }
+    
+    .info-text-description {
+        font-size: 26px;
+        width: 500px;
+    }
+    
+    .main-button {
+        width: 445px;
+        height: 85px;
+        font-size: 20px;
+        padding: 35px 25px;
+    }
+    
+    .click-button-description {
+        font-size: 20px;
+        width: 350px;
+    }
+    
+    .foot-block {
+        width: calc(100% - 60px);
+        top: -100px;
+        border-radius: 40px;
+    }
+    
+    .foot-block-description {
+        width: calc(100% - 60px);
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .foot-block-title {
+        font-size: 26px;
+    }
+    
+    .foot-block-description p,
+    .foot-block-description span {
+        font-size: 24px;
+    }
+    
+    .count1 {
+        left: 30px;
+    }
+    
+    .count3 {
+        right: 30px;
+    }
+}
+
+/* Для планшетов (768px) и мобилок - НОВАЯ СТРУКТУРА */
+@media (max-width: 768px) {
+    .mainInfo-section {
+        height: 700px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .mainInfo-container {
+        width: 100%;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+    
+    .bg-country,
+    .bg-country::before {
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+    
+    /* Скрываем самолет на мобилках */
+    .airbusImage {
+        display: none;
+    }
+    
+    .logoPanda {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin-top: 40px;
+        display: flex;
+        justify-content: start;
+        width: 100%;
+    }
+    
+    .logoPanda img {
+        width: 150px;
+        height: auto;
+    }
+    
+    .info-text {
+        position: relative;
+        top: auto;
+        left: auto;
+        max-width: 100%;
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .info-text-title {
+        font-size: 32px;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+    }
+    
+    .info-text-title span {
+        font-size: 32px;
+    }
+    
+    .info-text-description {
+        font-size: 22px;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        text-align: center;
+    }
+    
+    .main-click-button {
+        flex-direction: column;
+        align-items: center;
+        gap: 0px;
+        width: 100%;
+        margin-top: 15px;
+    }
+    
+    .main-button {
+        width: 300px;
+        height: 75px;
+        font-size: 18px;
+        padding: 25px 20px;
+    }
+    
+    .click-button-description {
+        width: 100%;
+        max-width: 300px;
+        font-size: 18px;
+        height: auto;
+        text-align: center;
+    }
+    
+    /* ===== ИСПРАВЛЕННЫЙ FOOT-BLOCK ДЛЯ МОБИЛОК ===== */
+    .foot-block {
+        width: calc(100% - 40px);
+        height: auto;
+        min-height: 200px;
+        top: -50px;
+        padding: 15px 0 25px 0;
+        border-radius: 20px;
+    }
+    
+    .foot-block-title {
+        font-size: 16px;
+        margin-top: 15px;
+        font-weight: 500;
+        line-height: 100%;
+        color: #B7B7B7;
+        text-transform: lowercase;
+        text-align: center;
+    }
+    
+    /* Скрываем старую структуру на мобилках */
+    .foot-block-description p {
+        display: none;
+    }
+    
+    .count1, .count2, .count3 {
+        display: none;
+    }
+    
+    /* Показываем новую структуру для мобилок */
+    .guarantee-item {
+        display: block;
+        position: relative;
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto 20px auto;
+        text-align: center;
+    }
+    
+    .guarantee-number {
+        display: block;
+        position: absolute;
+        width: 43px;
+        height: 61px;
+        left: 0;
+        top: 0;
+    }
+    
+    .guarantee-item p {
+        display: block;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.3;
+        color: #3F3F3F;
+        text-align: center;
+        margin: 0;
+        padding-left: 50px; /* Отступ для цифры */
+    }
+    
+    .guarantee-item span {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 18px;
+        color: #3F3F3F;
+        display: inline;
+    }
+    
+    .foot-block-description {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        margin-top: 15px;
+        padding: 0 20px;
+    }
+    
+    /* Позиционирование каждой цифры отдельно */
+    .guarantee-item:nth-child(1) .guarantee-number {
+        left: 20px;
+        top: 0;
+    }
+    
+    .guarantee-item:nth-child(2) .guarantee-number {
+        left: 20px;
+        top: 0;
+    }
+    
+    .guarantee-item:nth-child(3) .guarantee-number {
+        left: 20px;
+        top: 0;
+    }
+}
+
+/* Для мобильных устройств (480px) */
+@media (max-width: 480px) {
+    .mainInfo-section {
+        height: 600px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+    
+    .mainInfo-container {
+        padding: 0 20px;
+    }
+    
+    .logoPanda {
+        margin-top: 30px;
+    }
+    
+    .logoPanda img {
+        width: 130px;
+    }
+    
+    .info-text {
+        margin-top: 30px;
+    }
+    
+    .info-text-title {
+        width: 100%;
+        max-width: 353px;
+        height: auto;
+        font-size: 25px;
+        line-height: 125%;
+    }
+    
+    .info-text-title span {
+        font-size: 25px;
+        line-height: 125%;
+    }
+    
+    .info-text-description {
+        width: 100%;
+        margin-top: 15px;
+        font-size: 18px;
+        max-width: 353px;
+    }
+    
+    .main-button {
+        width: 304px;
+        height: 76px;
+        font-size: 16px;
+        padding: 20px 15px;
+        line-height: 90%;
+        font-weight: 500;
+    }
+    
+    .click-button-description {
+        max-width: 304px;
+        font-size: 16px;
+    }
+    
+    /* FOOT-BLOCK ДЛЯ МАЛЕНЬКИХ ЭКРАНОВ */
+    .foot-block {
+        width: calc(100% - 30px);
+        top: -40px;
+        padding: 10px 0 20px 0;
+        border-radius: 20px;
+        height: auto;
+    }
+    
+    .foot-block-title {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    
+    .foot-block-description {
+        margin-top: 10px;
+        padding: 0 15px;
+    }
+    
+    .guarantee-item {
+        max-width: 320px;
+        margin-bottom: 15px;
+    }
+    
+    .guarantee-number {
+        width: 35px;
+        height: 50px;
+    }
+    
+    .guarantee-item p {
+        font-size: 16px;
+        padding-left: 45px;
+    }
+    
+    .guarantee-item span {
+        font-size: 16px;
+    }
+    
+    /* Настройка позиций цифр для 480px */
+    .guarantee-item:nth-child(1) .guarantee-number {
+        left: 15px;
+        top: 0;
+    }
+    
+    .guarantee-item:nth-child(2) .guarantee-number {
+        left: 15px;
+        top: 0;
+    }
+    
+    .guarantee-item:nth-child(3) .guarantee-number {
+        left: 15px;
+        top: 0;
+    }
+}
+
+/* Для очень маленьких мобильных устройств (375px) */
+@media (max-width: 375px) {
+    .mainInfo-section {
+        height: 550px;
+    }
+    
+    .info-text-title {
+        font-size: 22px;
+        max-width: 280px;
+    }
+    
+    .info-text-title span {
+        font-size: 22px;
+    }
+    
+    .info-text-description {
+        font-size: 16px;
+        max-width: 280px;
+    }
+    
+    .main-button {
+        width: 250px;
+        height: 60px;
+        font-size: 15px;
+        padding: 18px 15px;
+    }
+    
+    .click-button-description {
+        max-width: 250px;
+        font-size: 15px;
+    }
+    
+    .foot-block {
+        width: calc(100% - 20px);
+        top: -30px;
+        border-radius: 15px;
+    }
+    
+    .guarantee-item {
+        max-width: 280px;
+    }
+    
+    .guarantee-number {
+        width: 30px;
+        height: 43px;
+    }
+    
+    .guarantee-item p {
+        font-size: 15px;
+        padding-left: 40px;
+    }
+    
+    .guarantee-item span {
+        font-size: 15px;
+    }
+    
+    /* Настройка позиций цифр для 375px */
+    .guarantee-item:nth-child(1) .guarantee-number {
+        left: 10px;
+        top: 0;
+    }
+    
+    .guarantee-item:nth-child(2) .guarantee-number {
+        left: 10px;
+        top: 0;
+    }
+    
+    .guarantee-item:nth-child(3) .guarantee-number {
+        left: 10px;
+        top: 0;
+    }
 }
