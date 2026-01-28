@@ -1,11 +1,10 @@
 .delivery-types-section {
     width: 100%;
-    margin-bottom: 1000px;
+    margin-bottom: 100px;
 }
 
 .delivery-types-container {
     max-width: 1519px;
-    width: 100%;
     margin: 0 auto;
 }
 
@@ -77,10 +76,10 @@
 }
 
 .delivery-type-title {
-    font-family: 'Unbounded', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    font-size: 32px;
-    color: #20BD53;
+    font-size: 30px;
+    color: #3F3F3F;
     margin-bottom: 10px;
     line-height: 120%;
     text-align: left;
@@ -104,6 +103,41 @@
 .delivery-card:hover .circle-bg {
     transform: translateX(-55%) scale(1.1);
     transition: transform 1s ease;
+}
+
+.title2{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    color: #3F3F3F;
+    line-height: 100%;
+    margin: 50px;
+}
+
+.transport-icon2 {
+    position: absolute;
+    z-index: 2;
+     top: 40px;
+    right: -90px;
+}
+.transport-icon3 {
+    position: absolute;
+    z-index: 2;
+     top: 117px;
+    right: -76px;
+}
+
+.transport-icon2 img {
+    width: 258px;
+    height: 164px;
+    object-fit: contain;
+}
+
+.transport-icon3 img {
+    width: 356px;
+    height: 216px;
+    object-fit: contain;
 }
 
 @media (max-width: 1200px) {
