@@ -1,4 +1,4 @@
-.whyWhite-section{
+.whyWhite-section {
     width: 100%;
     height: 594px;
     background: linear-gradient(to right, #209D53 50%, #48C57B);
@@ -6,9 +6,10 @@
     margin-bottom: 30px;
 }
 
-.whyWhite-container{
+.whyWhite-container {
     max-width: 1519px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .whyWhite-title span {
@@ -19,7 +20,7 @@
     color: #FFFFFF;
 }
 
-.whyWhite-title{
+.whyWhite-title {
     font-family: 'Unbounded', sans-serif;
     max-width: 1000px;
     height: 69px;
@@ -36,13 +37,13 @@
     display: flex;
     flex-direction: column;
     gap: 50px;
-    list-style: none; 
+    list-style: none;
     padding: 0;
 }
 
 .whyWhite-item {
     position: relative;
-    font-family: 'Montserrat', sans-serif; 
+    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 30px;
     line-height: 100%;
@@ -54,17 +55,229 @@
     content: "";
     position: absolute;
     left: 0;
-    top: 12px; 
-    width: 8px; 
-    height: 8px; 
+    top: 12px;
+    width: 8px;
+    height: 8px;
     background-color: #FFFFFF;
     border-radius: 50%;
 }
+
 .whyWhite-item span {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 30px;
     line-height: 100%;
-    color: #FFFFFF; 
+    color: #FFFFFF;
 }
 
+@media (max-width: 1400px) {
+    .whyWhite-list{
+        max-width:960px ;
+    }
+}
+
+/* ===== АДАПТИВ ДЛЯ ПЛАНШЕТОВ ===== */
+@media (max-width: 1200px) {
+    .whyWhite-section {
+        height: 500px;
+        border-radius: 40px;
+    }
+    
+    .whyWhite-container {
+        max-width: 100%;
+        padding: 0 40px;
+    }
+    
+    .whyWhite-title {
+        font-size: 42px;
+        height: auto;
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+    
+    .whyWhite-title span {
+        font-size: 42px;
+    }
+    
+    .whyWhite-list {
+        width: 100%;
+        gap: 40px;
+    }
+    
+    .whyWhite-item {
+        font-size: 24px;
+        padding-left: 25px;
+    }
+    
+    .whyWhite-item span {
+        font-size: 24px;
+    }
+    
+    .whyWhite-item::before {
+        top: 10px;
+        width: 7px;
+        height: 7px;
+    }
+}
+
+/* ===== АДАПТИВ ДЛЯ МОБИЛОК (768px и ниже) ===== */
+@media (max-width: 768px) {
+    .whyWhite-section {
+        height: auto;
+        min-height: 461px;
+        border-radius: 30px;
+        margin: 0 ;
+        width: 100% ;
+    }
+    
+    .whyWhite-container {
+        padding: 0 25px 40px 25px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .whyWhite-title {
+        font-size: 25px;
+        font-weight: 300;
+        line-height: 125%;
+        padding-top: 40px;
+        padding-bottom: 30px;
+        margin: 0;
+        max-width: 343px;
+        width: 100%;
+        height: auto;
+        text-align: left;
+    }
+    
+    .whyWhite-title span {
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 125%;
+    }
+    
+    .whyWhite-list {
+        width: 100%;
+        max-width: 343px;
+        gap: 25px;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .whyWhite-item {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 100%;
+        color: #FFFFFF;
+        padding-left: 18px;
+        text-align: left;
+    }
+    
+    .whyWhite-item::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 7px;
+        width: 5px;
+        height: 5px;
+        background-color: #FFFFFF;
+        border-radius: 50%;
+    }
+    
+    .whyWhite-item span {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 100%;
+        color: #FFFFFF;
+    }
+}
+
+/* ===== АДАПТИВ ДЛЯ МАЛЕНЬКИХ МОБИЛОК (480px и ниже) ===== */
+@media (max-width: 480px) {
+    .whyWhite-section {
+        margin: 0;
+        width:100% ;
+        min-height: 461px;
+    }
+    
+    .whyWhite-container {
+        padding: 0 20px 35px 20px;
+    }
+    
+    .whyWhite-title {
+        font-size: 25px;
+        padding-top: 40px;
+        padding-bottom: 35px;
+        line-height: 125%;
+        max-width: 353px;
+    }
+    
+    .whyWhite-title span {
+        font-size: 25px;
+    }
+    
+    .whyWhite-list {
+        max-width: 340px;
+        gap: 28px;
+    }
+    
+    .whyWhite-item {
+        font-size: 18px;
+        padding-left: 16px;
+    }
+    
+    .whyWhite-item span {
+        font-size: 18px;
+    }
+    
+    .whyWhite-item::before {
+        top: 6px;
+        width: 4px;
+        height: 4px;
+    }
+}
+
+/* ===== АДАПТИВ ДЛЯ ОЧЕНЬ МАЛЕНЬКИХ МОБИЛОК (393px и ниже) ===== */
+@media (max-width: 393px) {
+    .whyWhite-section {
+        width: 100%;
+        min-height: 461px;
+    }
+    
+    .whyWhite-container {
+        padding: 0 15px 30px 15px;
+    }
+    
+    .whyWhite-title {
+        font-size: 20px;
+        padding-top: 30px;
+        padding-bottom: 20px;
+        max-width: 273px;
+    }
+    
+    .whyWhite-title span {
+        font-size: 20px;
+    }
+    
+    .whyWhite-list {
+        max-width: 273px;
+        gap: 20px;
+    }
+    
+    .whyWhite-item {
+        font-size: 17px;
+        padding-left: 16px;
+        line-height: 110%;
+    }
+    
+    .whyWhite-item span {
+        font-size: 17px;
+    }
+    
+    .whyWhite-item::before {
+        top: 5px;
+        width: 4px;
+        height: 4px;
+    }
+}

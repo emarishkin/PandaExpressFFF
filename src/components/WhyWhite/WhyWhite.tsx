@@ -9,7 +9,7 @@ export const WhyWhite:FC = () => {
                 <ul className="whyWhite-list">
                     <li className="whyWhite-item">Белая доставка из Китая подразумевает <span>легальный ввоз товара</span> с оформлением <span>таможенной декларации и полной уплатой предусмотренных платежей</span> (включая таможенную пошлину и НДС), что гарантирует <span>правомерность оборота продукции на территории РФ.</span></li>
                     <li className="whyWhite-item"><span>Отсутствие</span> рисков конфискации</li>
-                    <li className="whyWhite-item"><span>Прозрачность</span>расчётов</li>
+                    <li className="whyWhite-item"><span>Прозрачность</span> расчётов</li>
                 </ul>
             </div>
         </section>

@@ -324,7 +324,7 @@
     .navigation-buttons {
         display: flex;
         justify-content: center;
-        margin: 30px auto 0 auto;
+        margin: 30px auto 90px auto;
         width: 100%;
         max-width: 353px;
         gap: 15px;
