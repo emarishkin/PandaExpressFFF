@@ -1,11 +1,10 @@
-.documentation-section {
-    width: 100%;
-}
 
 .documentation-container {
     max-width: 1519px;
     width: 100%;
     margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .documentation-title {
@@ -21,7 +20,7 @@
 
 .documents-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 747px));
+    grid-template-columns: repeat(2, 1fr);
     gap: 25px;
     justify-content: center;
 }
@@ -37,6 +36,7 @@
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
 .document-card:hover {
@@ -68,22 +68,117 @@
     text-align: center;
 }
 
-
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
+    .documentation-container {
+        max-width: 100%;
+        padding: 0 40px;
+    }
+    
     .documentation-title {
         font-size: 42px;
+        margin-bottom: 40px;
+    }
+    
+    .documents-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .documentation-section {
+        padding: 40px 20px 0px 20px;
+        overflow: hidden;
+    }
+    
+    .documentation-container {
+        padding: 0;
+        width: 100%;
+        max-width: 353px;
+        margin: 0 auto;
+    }
+    
+    .documentation-title {
+        font-size: 25px;
+        margin-bottom: 40px;
+        font-weight: 600;
+        text-align: start;
+        width: 100%;
+    }
+    
+    .documents-grid {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .documents-carousel {
+        display: flex;
+        transition: transform 0.5s ease;
+        width: max-content;
     }
     
     .document-card {
-        padding: 30px;
-        min-height: 300px;
+        min-width: 353px;
+        width: 353px;
+        height: 310px;
+        border-radius: 30px;
+        padding: 30px 25px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        flex-shrink: 0;
+    }
+    
+    .document-card:not(:last-child) {
+        margin-right: 20px;
+    }
+    
+    .document-card img {
+        width: 80px;
+        height: 56px;
+        margin-bottom: 25px;
     }
     
     .document-title {
-        font-size: 28px;
+        font-size: 22px;
+        font-weight: 600;
+        margin: 0 0 15px 0;
+        text-align: center;
     }
     
     .document-description {
+        width: 100%;
+        height: auto;
         font-size: 18px;
+        line-height: 100%;
+    }
+    
+    .doc-navigation-buttons {
+        display: flex;
+        justify-content: center;
+        margin: 25px auto 0px auto;
+        width: 100%;
+        max-width: 353px;
+        gap: 15px;
+    }
+    
+    .doc-nav-button {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        border: 1px solid #3f3f3f;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: white;
+    }
+    
+    .doc-nav-button img {
+        width: 7px;
+        height: 14px;
     }
 }
