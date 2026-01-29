@@ -141,7 +141,9 @@
 
 @media (max-width: 1200px) {
     .delivery-grid {
-        grid-template-columns: repeat(2, 1fr);
+        max-width: 488px;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 auto;
     }
 }
 
@@ -333,6 +335,12 @@
     
     .delivery-card:not(:last-child) {
         margin-right: 15px;
+    }
+
+    .delivery-grid {
+        display: block;
+        width:320px;
+        overflow: hidden;
     }
     
     .circle-bg {

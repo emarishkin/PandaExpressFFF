@@ -80,7 +80,9 @@
     }
     
     .documents-grid {
-        grid-template-columns: repeat(2, 1fr);
+        max-width: 500px;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 auto;
     }
 }
 
@@ -180,5 +182,19 @@
     .doc-nav-button img {
         width: 7px;
         height: 14px;
+    }
+}
+
+@media (max-width: 375px) {
+
+    .document-card{
+        min-width: 293px;
+        width: 317px;
+    }
+
+     .documents-grid {
+        display: block;
+        width: 100%;
+        overflow: hidden;
     }
 }

@@ -7,7 +7,11 @@ import count2 from '../../assets/images/2.png'
 import count3 from '../../assets/images/3.png'
 import '../MainInfo/MainInfo.css'
 
-export const MainInfo:FC = () => {
+interface MainInfoProps {
+    onOpenModal: () => void;
+}
+
+export const MainInfo:FC<MainInfoProps> = ({onOpenModal}) => {
     return (
     <> 
         <section className="mainInfo-section">
@@ -29,7 +33,7 @@ export const MainInfo:FC = () => {
                             Возьмём на себя все этапы — вам останется только получить товар
                         </p>
                         <div className="main-click-button">
-                            <button className="main-button">
+                            <button onClick={onOpenModal} className="main-button">
                                 <img src={checkbox} alt="галочка" />
                                 Получить консультацию
                             </button>
