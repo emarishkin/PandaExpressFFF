@@ -10,7 +10,7 @@ export const Footer:FC = () => {
         <footer className="footer">
             <div className="footer-container">
                 <div className="logo-socials">
-                    <img style={{width:188,height:60}} src={LogoFooterF} alt="Лого подвала" />
+                    <img className="logoPandaFooter" src={LogoFooterF} alt="Лого подвала" />
                     <div className="socials-block">
                         <p>Наши соцсети:</p>
                         <div className="socials-links">
@@ -31,8 +31,15 @@ export const Footer:FC = () => {
                                    ИНН: 7701123456<br />
                                    КПП: 770101001<br />
                                    Юридический адрес: 101000, г.<br /> Москва, ул. Примерная, д. 1, офис 10</p></a>
-                    <a href="#"><p>+7 (495) 123-45-67</p></a>
-                    <a href="#"><p>info@panda-express.ru</p></a>
+                    <a href="tel:+74951234567"><p>+7 (495) 123-45-67</p></a>
+                    <a href="mailto:info@panda-express.ru"><p>info@panda-express.ru</p></a>
+                    
+                    <div className="contact-mobile">
+                        <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+                    </div>
+                    <div className="contact-email">
+                        <a href="mailto:info@panda-express.ru">info@panda-express.ru</a>
+                    </div>
                 </div>
             </div>
         </footer>

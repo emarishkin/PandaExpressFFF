@@ -67,12 +67,126 @@
     justify-content: space-between;
     margin: 30px;
     margin-top: 25px;
+    position: relative;
 }
 
 .footer-last a {
     text-decoration: none;
-    font-family: 'Montserrat' ,sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 14px;
     color: #A9A9A9;
+}
+
+.contact-mobile {
+    display: none; 
+}
+
+.contact-email {
+    display: none; 
+}
+
+.logoPandaFooter{
+        width: 188px;
+        height: 60px;
+    }
+
+@media (max-width: 768px) {
+
+
+    .logo-socials {
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .logoPandaFooter {
+        width: 128px;
+        height: 42px;
+    }
+    
+    .logo-socials .socials-block {
+        align-self: flex-end;
+    }
+    
+    .socials-block {
+        gap: 10px;
+    }
+    
+    .footer-footer {
+        margin-bottom: -5px;
+        margin-top: 90px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-footer p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 100%;
+    }
+    
+    .footer-last {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: relative; 
+    }
+    
+    .footer-last p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 115%;
+    }
+    
+    .footer-last a:nth-child(2),
+    .footer-last a:nth-child(3) {
+        display: none;
+    }
+    
+    .contact-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        position: absolute;
+        bottom: 20px;
+        top: -215px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+    .contact-email {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        position: absolute;
+        bottom: 20px;
+        top: -255px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+    
+    .contact-mobile a {
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        color: #A9A9A9;
+        text-align: center;
+    }
+    .contact-email a {
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        color: #A9A9A9;
+        text-align: center;
+    }
 }
