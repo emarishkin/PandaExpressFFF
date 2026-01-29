@@ -11,13 +11,13 @@ function App() {
   return (
     <>
       <MainInfo />
-      <WhatWeOffer />
+      {/* <WhatWeOffer />
       <WhyWhite />
       <ButtonPanda />
       <Documentation />
       <ButtonPanda />
       <DeliveryTypes />
-      <Footer />
+      <Footer /> */}
     </>
   )
 }

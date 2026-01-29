@@ -1,7 +1,7 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Unbounded:wght@300;600&display=swap');
 
-/* === ОРИГИНАЛЬНЫЕ СТИЛИ ДЛЯ ДЕСКТОПА === */
 .mainInfo-section{
     position: relative;
     width: 100%;
@@ -52,7 +52,7 @@
 }
 
 .airbusImage{
-    position: absolute;
+        position: absolute;
     width: 1470px;
     height: 974px;
     top: -30px;
@@ -78,7 +78,6 @@
     font-size: 51px;
     line-height: 125%;
     color: #FFFFFF;
-    text-align: left;
 }
 
 .info-text-title span {
@@ -96,7 +95,6 @@
     line-height: 100%;
     font-family:  'Montserrat', sans-serif;
     color: #FFFFFF;
-    text-align: left;
 }
 
 .main-click-button{
@@ -124,7 +122,6 @@
     box-shadow: 0px 0px 105px rgba(96, 242, 142, 0.498);
     transition: all 0.3s ease;
     cursor: pointer;
-    text-align: center;
 }
 
 .main-button:hover {
@@ -142,14 +139,10 @@
 .click-button-description{
     width: 407px;
     height: 48px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 22px;
-    line-height: 100%;
-    color: #FFFFFF;
-    text-align: left;
+    font-family: 'Montserrat', sans-serif;font-size: 22px;
+     line-height: 100%;
 }
 
-/* === FOOT-BLOCK СТИЛИ ДЛЯ ДЕСКТОПА === */
 .foot-block{
     width: 1519px;
     height: 255px;
@@ -171,7 +164,7 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
     line-height: 100%;
-    text-align: center;
+    align-content: center;
 }
 
 .foot-block-description{
@@ -179,8 +172,8 @@
     top: 115px;
     display: flex;
     justify-content: space-between;
-    width: 1319px;
-    height: 67px;
+   width: 1319px;
+   height: 67px;
 }
 
 .foot-block-description span {
@@ -197,36 +190,24 @@
     font-size: 30px;
     line-height: 100%;
     color: #3F3F3F;
-    text-align: left;
 }
 
-.foot-block-description p:last-child {
-    text-align: right;
-}
 
-/* Цифры для десктопа (абсолютное позиционирование) */
-.count1, .count2, .count3 {
-    position: absolute;
-    z-index: 1001;
-}
 
 .count1{
+    position: absolute;
     top: 125px;
     left: 78px;
-    width: 40px;
-    height: 57px;
 }
 .count2{
+    position: absolute;
     top: 125px;
     left: 565px;
-    width: 40px;
-    height: 57px;
 }
 .count3{
+    position: absolute;
     top: 125px;
     left: 1175px;
-    width: 40px;
-    height: 57px;
 }
 
 /* Новая структура для мобилок - СКРЫТА НА ДЕСКТОПЕ */
@@ -368,7 +349,7 @@
 /* Для планшетов (768px) и мобилок - НОВАЯ СТРУКТУРА */
 @media (max-width: 768px) {
     .mainInfo-section {
-        height: 700px;
+        height: 630px;
         border-bottom-left-radius: 30px;
         border-bottom-right-radius: 30px;
         display: flex;
@@ -446,9 +427,8 @@
     .main-click-button {
         flex-direction: column;
         align-items: center;
-        gap: 0px;
+        gap: 5px;
         width: 100%;
-        margin-top: 15px;
     }
     
     .main-button {
@@ -469,10 +449,10 @@
     /* ===== ИСПРАВЛЕННЫЙ FOOT-BLOCK ДЛЯ МОБИЛОК ===== */
     .foot-block {
         width: calc(100% - 40px);
-        height: auto;
+        height: 386px;
         min-height: 200px;
-        top: -50px;
-        padding: 15px 0 25px 0;
+        top: -60px;
+        padding: 25px 0 25px 0;
         border-radius: 20px;
     }
     
@@ -494,6 +474,7 @@
     .count1, .count2, .count3 {
         display: none;
     }
+   
     
     /* Показываем новую структуру для мобилок */
     .guarantee-item {
@@ -505,13 +486,29 @@
         text-align: center;
     }
     
-    .guarantee-number {
+    .guarantee-number1 {
         display: block;
         position: absolute;
         width: 43px;
-        height: 61px;
-        left: 0;
-        top: 0;
+        height: 66px;
+        left: 90px;
+        top: -10px;
+    }
+    .guarantee-number2 {
+        display: block;
+        position: absolute;
+        width: 63px;
+        height: 66px;
+        left: 27px;
+        top: -10px;
+    }
+    .guarantee-number3 {
+        display: block;
+        position: absolute;
+       width: 63px;
+        height: 66px;
+        left: 76px;
+        top: -10px;
     }
     
     .guarantee-item p {
@@ -523,7 +520,6 @@
         color: #3F3F3F;
         text-align: center;
         margin: 0;
-        padding-left: 50px; /* Отступ для цифры */
     }
     
     .guarantee-item span {
@@ -543,7 +539,7 @@
         height: auto;
         flex-direction: column;
         align-items: center;
-        gap: 0;
+        gap: 35px;
         margin-top: 15px;
         padding: 0 20px;
     }
@@ -555,11 +551,13 @@
     }
     
     .guarantee-item:nth-child(2) .guarantee-number {
+        
         left: 20px;
         top: 0;
     }
     
     .guarantee-item:nth-child(3) .guarantee-number {
+        
         left: 20px;
         top: 0;
     }
@@ -568,7 +566,7 @@
 /* Для мобильных устройств (480px) */
 @media (max-width: 480px) {
     .mainInfo-section {
-        height: 600px;
+        height: 581px;
         border-bottom-left-radius: 30px;
         border-bottom-right-radius: 30px;
     }
@@ -586,7 +584,7 @@
     }
     
     .info-text {
-        margin-top: 30px;
+        margin-top: 50px;
     }
     
     .info-text-title {
@@ -617,65 +615,17 @@
         line-height: 90%;
         font-weight: 500;
     }
+
+    .main-click-button{
+        margin-top: 15px;
+    }
     
     .click-button-description {
         max-width: 304px;
         font-size: 16px;
     }
     
-    /* FOOT-BLOCK ДЛЯ МАЛЕНЬКИХ ЭКРАНОВ */
-    .foot-block {
-        width: calc(100% - 30px);
-        top: -40px;
-        padding: 10px 0 20px 0;
-        border-radius: 20px;
-        height: auto;
-    }
     
-    .foot-block-title {
-        font-size: 14px;
-        margin-top: 10px;
-    }
-    
-    .foot-block-description {
-        margin-top: 10px;
-        padding: 0 15px;
-    }
-    
-    .guarantee-item {
-        max-width: 320px;
-        margin-bottom: 15px;
-    }
-    
-    .guarantee-number {
-        width: 35px;
-        height: 50px;
-    }
-    
-    .guarantee-item p {
-        font-size: 16px;
-        padding-left: 45px;
-    }
-    
-    .guarantee-item span {
-        font-size: 16px;
-    }
-    
-    /* Настройка позиций цифр для 480px */
-    .guarantee-item:nth-child(1) .guarantee-number {
-        left: 15px;
-        top: 0;
-    }
-    
-    .guarantee-item:nth-child(2) .guarantee-number {
-        left: 15px;
-        top: 0;
-    }
-    
-    .guarantee-item:nth-child(3) .guarantee-number {
-        left: 15px;
-        top: 0;
-    }
 }
 
 /* Для очень маленьких мобильных устройств (375px) */

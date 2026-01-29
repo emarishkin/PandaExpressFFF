@@ -45,7 +45,7 @@ export const MainInfo:FC = () => {
         <div className="foot-block">
             <h3 className="foot-block-title">наши гарантии</h3>
             <div className="foot-block-description">
-                {/* Старая структура для десктопа */}
+
                 <p>
                     <span>Скорость</span><br />обработки заявки
                 </p>
@@ -56,28 +56,26 @@ export const MainInfo:FC = () => {
                     <span>Прозрачность</span><br />цены
                 </p>
                 
-                {/* Новая структура для мобилок */}
                 <div className="guarantee-item">
-                    <img className="guarantee-number" src={count1} alt="1" />
+                    <img className="guarantee-number1" src={count1} alt="1" />
                     <p>
                         <span>Скорость</span><br />обработки заявки
                     </p>
                 </div>
                 <div className="guarantee-item">
-                    <img className="guarantee-number" src={count2} alt="2" />
+                    <img className="guarantee-number2" src={count2} alt="2" />
                     <p>
                         <span>Индивидуальный</span>подход<br />и <span>минимизация</span> расходов
                     </p>
                 </div>
                 <div className="guarantee-item">
-                    <img className="guarantee-number" src={count3} alt="3" />
+                    <img className="guarantee-number3" src={count3} alt="3" />
                     <p>
                         <span>Прозрачность</span><br />цены
                     </p> 
                 </div>
             </div>
             
-            {/* Цифры для десктопа (абсолютное позиционирование) */}
             <img className="count1" src={count1} alt="1" />
             <img className="count2" src={count2} alt="2" />
             <img className="count3" src={count3} alt="3" />
