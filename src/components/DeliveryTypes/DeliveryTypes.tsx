@@ -1,11 +1,18 @@
 import type { FC } from "react";
+import { useState, useEffect } from "react";
 import './DeliveryTypes.css';
 import auto from '../../assets/images/auto.png';
 import sea from '../../assets/images/sea.png';
 import train from '../../assets/images/train.png';
 import circleBg from '../../assets/images/circleBg.png'; 
+import VectorL from '../../assets/images/VectorL.png';
+import VectorR from '../../assets/images/VectorR.png';
 
 export const DeliveryTypes: FC = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [currentIndexMulti, setCurrentIndexMulti] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
+    
     const deliveryTypes = [
         {
             id: 1,
@@ -45,56 +52,171 @@ export const DeliveryTypes: FC = () => {
         },
     ];
 
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+        
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    const nextSlide = () => {
+        setCurrentIndex((prev) => (prev + 1) % deliveryTypes.length);
+    };
+
+    const prevSlide = () => {
+        setCurrentIndex((prev) => (prev - 1 + deliveryTypes.length) % deliveryTypes.length);
+    };
+
+    const nextSlideMulti = () => {
+        setCurrentIndexMulti((prev) => (prev + 1) % deliveryTypesMulti.length);
+    };
+
+    const prevSlideMulti = () => {
+        setCurrentIndexMulti((prev) => (prev - 1 + deliveryTypesMulti.length) % deliveryTypesMulti.length);
+    };
+
+    const getTransformValue = () => {
+        if (isMobile) {
+            return `translateX(-${currentIndex * 373}px)`;
+        }
+        return 'translateX(0)';
+    };
+
+    const getTransformValueMulti = () => {
+        if (isMobile) {
+            return `translateX(-${currentIndexMulti * 373}px)`;
+        }
+        return 'translateX(0)';
+    };
+
     return (
         <section className="delivery-types-section">
             <div className="delivery-types-container">
                 <h2 className="delivery-title"><span>ВИДЫ</span> ДОСТАВОК</h2>
                 
                 <div className="delivery-grid">
-                    {deliveryTypes.map((type) => (
-                        <div key={type.id} className="delivery-card">
-
-                            <div className="circle-bg">
-                                <img src={circleBg} alt="фон" className="circle-image" />
-                            </div>
-                            
-                            <div className="transport-icon">
-                                <img src={type.icon} alt={type.title} />
-                            </div>
-                            
-                            <div className="delivery-content">
-                                <h3 className="delivery-type-title">{type.title}</h3>
-                            </div>
+                    {isMobile ? (
+                        <div 
+                            className="delivery-carousel"
+                            style={{ transform: getTransformValue() }}
+                        >
+                            {deliveryTypes.map((type) => (
+                                <div key={type.id} className="delivery-card">
+                                    <div className="circle-bg">
+                                        <img src={circleBg} alt="фон" className="circle-image" />
+                                    </div>
+                                    
+                                    <div className="transport-icon">
+                                        <img src={type.icon} alt={type.title} />
+                                    </div>
+                                    
+                                    <div className="delivery-content">
+                                        <h3 className="delivery-type-title">{type.title}</h3>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
-                    ))}
+                    ) : (
+                        <>
+                            {deliveryTypes.map((type) => (
+                                <div key={type.id} className="delivery-card">
+                                    <div className="circle-bg">
+                                        <img src={circleBg} alt="фон" className="circle-image" />
+                                    </div>
+                                    
+                                    <div className="transport-icon">
+                                        <img src={type.icon} alt={type.title} />
+                                    </div>
+                                    
+                                    <div className="delivery-content">
+                                        <h3 className="delivery-type-title">{type.title}</h3>
+                                    </div>
+                                </div>
+                            ))}
+                        </>
+                    )}
                 </div>
+                
+                {isMobile && (
+                    <div className="delivery-navigation-buttons">
+                        <button className="delivery-nav-button" onClick={prevSlide}>
+                            <img src={VectorL} alt="Предыдущий" />
+                        </button>
+                        <button className="delivery-nav-button" onClick={nextSlide}>
+                            <img src={VectorR} alt="Следующий" />
+                        </button>
+                    </div>
+                )}
                  
                 <div>
                     <p className="title2">Мультимодальные:</p>
                 </div>
                              
                 <div className="delivery-grid">
-                    {deliveryTypesMulti.map((type) => (
-                        <div key={type.id} className="delivery-card">
-                            <div className="circle-bg">
-                                <img src={circleBg} alt="фон" className="circle-image" />
-                            </div>
-    
-                            <div className="transport-icon2">
-                                <img src={type.icon1} alt={type.title} />
-                            </div>
+                    {isMobile ? (
+                        <div 
+                            className="delivery-carousel-multi"
+                            style={{ transform: getTransformValueMulti() }}
+                        >
+                            {deliveryTypesMulti.map((type) => (
+                                <div key={type.id} className="delivery-card">
+                                    <div className="circle-bg">
+                                        <img src={circleBg} alt="фон" className="circle-image" />
+                                    </div>
+        
+                                    <div className="transport-icon2">
+                                        <img src={type.icon1} alt={type.title} />
+                                    </div>
 
-                            <div className="transport-icon3">
-                                <img src={type.icon2} alt={type.title} />
-                            </div>
-                            
-                            <div className="delivery-content">
-                                <h3 className="delivery-type-title">{type.title}</h3>
-                            </div>
+                                    <div className="transport-icon3">
+                                        <img src={type.icon2} alt={type.title} />
+                                    </div>
+                                    
+                                    <div className="delivery-content">
+                                        <h3 className="delivery-type-title">{type.title}</h3>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
-                    ))}
+                    ) : (
+                        <>
+                            {deliveryTypesMulti.map((type) => (
+                                <div key={type.id} className="delivery-card">
+                                    <div className="circle-bg">
+                                        <img src={circleBg} alt="фон" className="circle-image" />
+                                    </div>
+        
+                                    <div className="transport-icon2">
+                                        <img src={type.icon1} alt={type.title} />
+                                    </div>
+
+                                    <div className="transport-icon3">
+                                        <img src={type.icon2} alt={type.title} />
+                                    </div>
+                                    
+                                    <div className="delivery-content">
+                                        <h3 className="delivery-type-title">{type.title}</h3>
+                                    </div>
+                                </div>
+                            ))}
+                        </>
+                    )}
                 </div>
 
+                {isMobile && (
+                    <div className="delivery-navigation-buttons-multi">
+                        <button className="delivery-nav-button" onClick={prevSlideMulti}>
+                            <img src={VectorL} alt="Предыдущий" />
+                        </button>
+                        <button className="delivery-nav-button" onClick={nextSlideMulti}>
+                            <img src={VectorR} alt="Следующий" />
+                        </button>
+                    </div>
+                )}
             </div>
         </section>
     );
