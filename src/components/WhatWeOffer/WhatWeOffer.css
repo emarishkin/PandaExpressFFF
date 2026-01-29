@@ -13,7 +13,6 @@
 }
 
 .section-title {
-    width: 771px;
     height: 69px;
     font-family: 'Unbounded', sans-serif;
     font-weight: 300;
@@ -53,7 +52,6 @@
     transition: all 0.3s ease;
 }
 
-
 .nav-button img {
     width: 9px;
     height: 18px;
@@ -84,8 +82,6 @@
     background: #FFFFFF;
     border-radius: 30px;
 }
-
-
 
 .icon-image {
     position: absolute;
@@ -180,31 +176,17 @@
     margin-top: 30px;
 }
 
-.carousel-indicators {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 40px;
-}
-
-.indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #DDD;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.indicator.active {
-    background: #20BD53;
-    transform: scale(1.2);
-}
-
-/* Адаптивность */
+/* Адаптивность для планшетов */
 @media (max-width: 1200px) {
     .what-we-offer-section {
         padding-left: 100px;
+    }
+
+    .section-title {
+        font-size: 47px;
+    }
+    .section-title span {
+        font-size: 47px;
     }
     
     .what-we-offer-header {
@@ -218,23 +200,230 @@
 
 @media (max-width: 768px) {
     .what-we-offer-section {
-        padding: 60px 20px 100px 20px;
+        padding: 40px 20px 0px 20px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
     .what-we-offer-header {
-        padding-right: 20px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 30px;
+        padding: 0;
+        margin-bottom: 30px;
+        justify-content: center;
+        width: 100%;
+        display: flex;
+    }
+    
+    .section-title {
+        width: 100%;
+        max-width: 345px;
+        height: auto;
+        font-size: 25px;
+        text-align: start;
+        line-height: 125%;
+        font-weight: 300;
+    }
+    
+    .section-title span {
+        font-size: 25px;
+        font-weight: 600;
     }
     
     .offers-carousel-container {
         width: 100%;
+        max-width: 373px; /* Увеличиваем на padding-left (353px + 20px) */
+        overflow: hidden;
+        position: relative;
+        margin: 0 auto;
+    }
+    
+    .offers-carousel-wrapper {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .offers-carousel {
+        gap: 20px;
+        padding-right: 0;
+        padding-left: 10px; /* Отступ для центрирования */
     }
     
     .offer-card {
-        flex: 0 0 calc(100vw - 40px);
+        min-width: 353px;
+        width: 353px;
+        height: 354px;
+        border-radius: 20px;
+        padding: 30px 25px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    .icon-image {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 39px;
+        height: 39px;
+        margin-bottom: 20px;
+    }
+    
+    .offer-title {
+        width: 100%;
         height: auto;
-        padding: 40px 30px;
+        min-height: 60px;
+        font-size: 30px;
+        margin: 0 0 25px 0;
+        padding: 0;
+        text-align: center;
+    }
+    
+    .offer-description {
+        width: 100%;
+        height: auto;
+        font-size: 17px;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        line-height: 130%;
+    }
+    
+    .offer-description span {
+        font-size: 17px;
+    }
+    
+    .offer-card:nth-of-type(2) .offer-description,
+    .offer-card:nth-of-type(4) .offer-description,
+    .offer-card:nth-of-type(5) .offer-description,
+    .offer-card:nth-of-type(6) .offer-description {
+        width: 100%;
+        height: auto;
+    }
+    
+    .offer-card:nth-of-type(2) .offer-title,
+    .offer-card:nth-of-type(4) .offer-title,
+    .offer-card:nth-of-type(5) .offer-title,
+    .offer-card:nth-of-type(6) .offer-title {
+        height: auto;
+    }
+    
+    .offer-card:nth-of-type(1) .offer-title,
+    .offer-card:nth-of-type(3) .offer-title {
+        margin-top: 0;
+    }
+    
+    .offer-card:nth-of-type(1) .offer-description,
+    .offer-card:nth-of-type(3) .offer-description {
+        margin-top: 0;
+    }
+    
+    .navigation-buttons {
+        display: flex;
+        justify-content: center;
+        margin: 30px auto 0 auto;
+        width: 100%;
+        max-width: 353px;
+        gap: 15px;
+    }
+    
+    .nav-button {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+    }
+    
+    .nav-button img {
+        width: 7px;
+        height: 14px;
+    }
+}
+
+/* Для маленьких мобилок (480px) */
+@media (max-width: 480px) {
+    .what-we-offer-section {
+        padding: 30px 15px 0px 15px;
+        align-items: center;
+    }
+    
+    .section-title {
+        max-width: 315px;
+    }
+    
+    .offers-carousel-container {
+        max-width: 335px; /* 320px + 15px */
+    }
+    
+    .offers-carousel {
+        gap: 15px;
+        padding-left: 7.5px; /* Половина gap */
+    }
+    
+    .offer-card {
+        min-width: 320px;
+        width: 320px;
+        height: 320px;
+        padding: 25px 20px;
+    }
+    
+    .navigation-buttons {
+        max-width: 320px;
+    }
+}
+
+/* Для очень маленьких мобилок (375px) */
+@media (max-width: 375px) {
+    .what-we-offer-section {
+        padding: 25px 10px 0px 10px;
+        align-items: center;
+    }
+
+    .section-title {
+        max-width: 280px;
+    }
+    
+    .offers-carousel-container {
+        max-width: 292px; /* 280px + 12px */
+    }
+    
+    .offers-carousel {
+        gap: 12px;
+        padding-left: 6px; /* Половина gap */
+    }
+    
+    .offer-card {
+        min-width: 280px;
+        width: 280px;
+        height: 300px;
+        padding: 20px 15px;
+    }
+    
+    .icon-image {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .offer-title {
+        font-size: 20px;
+    }
+    
+    .offer-description {
+        font-size: 15px;
+    }
+    
+    .offer-description span {
+        font-size: 15px;
+    }
+    
+    .navigation-buttons {
+        max-width: 280px;
+    }
+    
+    .nav-button {
+        width: 45px;
+        height: 45px;
     }
 }
