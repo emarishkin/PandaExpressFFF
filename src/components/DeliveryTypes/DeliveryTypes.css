@@ -93,8 +93,7 @@
     line-height: 130%;
 }
 
-/* Анимация при наведении */
-.delivery-card:hover {
+/* .delivery-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 50px rgba(32, 189, 83, 0.2);
     transition: all 1s ease;
@@ -103,7 +102,7 @@
 .delivery-card:hover .circle-bg {
     transform: translateX(-55%) scale(1.1);
     transition: transform 1s ease;
-}
+} */
 
 .title2{
     text-align: center;
