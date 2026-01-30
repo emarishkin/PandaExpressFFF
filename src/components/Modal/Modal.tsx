@@ -8,6 +8,9 @@ interface ModalProps {
     onClose: () => void;
 }
 
+const TELEGRAM_BOT_TOKEN = '8411247693:AAEkAW4hkyqNn3CifckDCg32nGNHqdb3wEA'; 
+const TELEGRAM_CHAT_ID = '-5239862058'; 
+
 export const Modal: FC<ModalProps> = ({ isOpen, onClose }) => {
     const [formData, setFormData] = useState({
         name: '',
@@ -57,18 +60,61 @@ export const Modal: FC<ModalProps> = ({ isOpen, onClose }) => {
         }));
     };
 
+    // Функция отправки в Telegram
+    const sendToTelegram = async () => {
+        const message = `
+            📞 *Новая заявка на консультацию!*
+            
+            👤 *Имя:* ${formData.name}
+            📱 *Телефон:* ${formData.phone}
+            💬 *Соц. сеть для связи:* ${formData.social === 'telegram' ? 'Telegram' : formData.social === 'whatsapp' ? 'WhatsApp' : 'ВКонтакте'}
+            📲 *Позвонить:* ${formData.callMe ? 'Да' : 'Нет'}
+            
+            ⏰ *Время отправки:* ${new Date().toLocaleString('ru-RU')}
+        `;
+
+        try {
+            const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    chat_id: TELEGRAM_CHAT_ID,
+                    text: message,
+                    parse_mode: 'Markdown'
+                })
+            });
+
+            const result = await response.json();
+            
+            if (!result.ok) {
+                console.error('Ошибка Telegram:', result);
+                throw new Error('Ошибка отправки в Telegram');
+            }
+            
+            return true;
+        } catch (error) {
+            console.error('Ошибка при отправке в Telegram:', error);
+            throw error;
+        }
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
         
         try {
-            console.log('Данные формы:', formData);
+            // Отправляем данные в Telegram
+            await sendToTelegram();
             
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            // Можно также отправить на бэкенд или другую систему
+            console.log('Данные формы:', formData);
             
             alert('Заявка успешно отправлена! С вами свяжутся в ближайшее время.');
             onClose();
             
+            // Сброс формы
             setFormData({
                 name: '',
                 phone: '',
