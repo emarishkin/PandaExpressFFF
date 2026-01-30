@@ -1,7 +1,14 @@
+
 .what-we-offer-section {
-    padding: 0px 0 45px 197px; /* Отступ слева 197px */
     position: relative;
-    overflow: hidden; /* Скрываем все, что выходит за пределы */
+    overflow: hidden;
+}
+
+.what-we-offer-container{
+    max-width: 1519px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .what-we-offer-header {
@@ -9,7 +16,7 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 60px;
-    padding-right: 197px; /* Балансируем отступ */
+    padding-right: 197px;
 }
 
 .section-title {
@@ -51,6 +58,7 @@
     cursor: pointer;
     background: #FFFFFF;
     transition: all 0.3s ease;
+    margin-top: 30px;
 }
 
 .nav-button img {
@@ -177,10 +185,15 @@
     margin-top: 30px;
 }
 
-/* Адаптивность для планшетов */
+@media (max-width: 1600px) {
+    .what-we-offer-section {
+        padding-left: 40px;
+    }
+}
+
 @media (max-width: 1200px) {
     .what-we-offer-section {
-        padding-left: 100px;
+        padding-left: 40px;
     }
 
     .section-title {
@@ -201,17 +214,18 @@
 
 @media (max-width: 768px) {
     .what-we-offer-section {
-        padding: 40px 20px 0px 20px;
+        padding: 40px 0 0 0;
         overflow: hidden;
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
     
     .what-we-offer-header {
-        padding: 0;
+        padding: 0 20px;
         margin-bottom: 30px;
-        justify-content: center;
+        justify-content: start;
         width: 100%;
         display: flex;
     }
@@ -232,11 +246,11 @@
     }
     
     .offers-carousel-container {
-        width: 100%;
-        max-width: 373px; /* Увеличиваем на padding-left (353px + 20px) */
+        width: 100vw;
         overflow: hidden;
         position: relative;
         margin: 0 auto;
+        padding-left: 20px; /* Отступ для первого элемента */
     }
     
     .offers-carousel-wrapper {
@@ -245,23 +259,25 @@
         position: relative;
     }
     
+    /* Ключевые изменения для мобильного скролла */
     .offers-carousel {
         gap: 20px;
-        padding-right: 0;
-        padding-left: 10px; /* Отступ для центрирования */
+        padding-right: 20px; /* Отступ справа для последнего элемента */
     }
     
     .offer-card {
-        min-width: 353px;
-        width: 353px;
+        min-width: calc(100vw - 40px); /* 20px слева + 20px справа */
+        max-width: calc(100vw - 40px);
+        width: calc(100vw - 40px);
         height: 354px;
         border-radius: 20px;
         padding: 30px 25px;
-        box-sizing: border-box;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
+        flex-shrink: 0;
+        box-sizing: border-box;
     }
     
     .icon-image {
@@ -325,16 +341,19 @@
     .navigation-buttons {
         display: flex;
         justify-content: center;
-        margin: 30px auto 90px auto;
+        margin: 30px auto 70px auto;
         width: 100%;
         max-width: 353px;
         gap: 15px;
+        padding: 0 20px;
+        box-sizing: border-box;
     }
     
     .nav-button {
         width: 50px;
         height: 50px;
         border-radius: 12px;
+        margin: 0;
     }
     
     .nav-button img {
@@ -346,40 +365,43 @@
 /* Для маленьких мобилок (480px) */
 @media (max-width: 480px) {
     .what-we-offer-section {
-        padding: 30px 15px 0px 15px;
-        align-items: center;
+        padding: 30px 0 0 0;
     }
     
-    .section-title {
-        max-width: 315px;
+    .what-we-offer-header {
+        padding: 0 20px;
     }
     
     .offers-carousel-container {
-        max-width: 335px; /* 320px + 15px */
+        padding-left: 20px;
     }
     
     .offers-carousel {
-        gap: 15px;
-        padding-left: 7.5px; /* Половина gap */
+        gap: 20px;
+        padding-right: 20px;
     }
     
     .offer-card {
-        min-width: 320px;
-        width: 320px;
-        height: 320px;
-        padding: 25px 20px;
+        min-width: calc(100vw - 40px);
+        max-width: calc(100vw - 40px);
+        width: calc(100vw - 40px);
+        height: 354px;
     }
     
     .navigation-buttons {
         max-width: 320px;
+        padding: 0 20px;
     }
 }
 
 /* Для очень маленьких мобилок (375px) */
 @media (max-width: 375px) {
     .what-we-offer-section {
-        padding: 25px 10px 0px 10px;
-        align-items: center;
+        padding: 25px 0 0 0;
+    }
+    
+    .what-we-offer-header {
+        padding: 0 20px;
     }
 
     .section-title {
@@ -387,18 +409,19 @@
     }
     
     .offers-carousel-container {
-        max-width: 292px; /* 280px + 12px */
+        padding-left: 20px;
     }
     
     .offers-carousel {
-        gap: 12px;
-        padding-left: 6px; /* Половина gap */
+        gap: 20px;
+        padding-right: 20px;
     }
     
     .offer-card {
-        min-width: 280px;
-        width: 280px;
-        height: 300px;
+        min-width: calc(100vw - 40px);
+        max-width: calc(100vw - 40px);
+        width: calc(100vw - 40px);
+        height: 320px;
         padding: 20px 15px;
     }
     
@@ -421,6 +444,7 @@
     
     .navigation-buttons {
         max-width: 280px;
+        padding: 0 20px;
     }
     
     .nav-button {

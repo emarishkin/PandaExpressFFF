@@ -149,16 +149,17 @@
 
 @media (max-width: 768px) {
     .delivery-types-section {
-        padding: 25px 0px 25px 0px;
-        overflow: hidden;
+        padding: 40px 0 0 0; /* Убираем горизонтальные отступы у секции */
         margin-bottom: 40px;
+        overflow: hidden; /* Важно для карусели */
     }
     
     .delivery-types-container {
         padding: 0;
-        width: 100%;
-        max-width: 353px;
         margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
     
     .delivery-title {
@@ -166,7 +167,9 @@
         margin-bottom: 40px;
         font-weight: 300;
         text-align: start;
-        width: 125%;
+        width: 100%;
+        padding: 0 20px; /* Отступы только у заголовка */
+        box-sizing: border-box;
     }
     
     .delivery-title span {
@@ -176,86 +179,98 @@
     .delivery-grid {
         display: block;
         width: 100%;
-        overflow: hidden;
+        margin-left: 0;
+        margin-bottom: 30px;
     }
     
     .delivery-carousel {
         display: flex;
         transition: transform 0.5s ease;
         width: max-content;
+        gap: 20px;
+        padding: 0 20px; /* Отступы по бокам карусели */
     }
     
     .delivery-carousel-multi {
         display: flex;
         transition: transform 0.5s ease;
         width: max-content;
+        gap: 20px;
+        padding: 0 20px; /* Отступы по бокам карусели */
     }
     
     .delivery-card {
-        min-width: 353px;
-        width: 353px;
-        min-height: 158px; 
-        border-radius: 22px; /* Изменено с 30px на 22px */
+        width: calc(100vw - 40px);
+        max-width: calc(100vw - 40px);
+        min-height: 158px;
+        border-radius: 22px;
         padding: 20px;
         box-sizing: border-box;
         flex-shrink: 0;
         position: relative;
         overflow: hidden;
-        margin-bottom: 0; /* Убрал margin-bottom */
+        background: #FFFFFF;
+        margin: 0;
     }
     
+    /* Убираем старый margin-right, используем gap в карусели */
     .delivery-card:not(:last-child) {
-        margin-right: 20px;
+        margin-right: 0;
     }
     
-    /* Адаптируем позиционирование элементов внутри маленькой карточки */
+    /* Адаптируем позиционирование элементов внутри карточки */
     .circle-bg {
         position: absolute;
-        top: -33px;
-        left: 255px;
-        transform: translateX(-50%);
+        top: -25px;
+        left: calc(100% - 180px); /* Позиционируем относительно правого края */
         width: 210px;
         height: 237px;
         z-index: 1;
-        border-radius: 37px;
+        transform: none; /* Убираем translateX так как используем left */
     }
     
-    .transport-icon {
+    .circle-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; 
+    }
+    
+        .transport-icon {
         position: absolute;
         z-index: 2;
-        top: 15px;
-        right: -30px;
+        top: 35px;
+        right: -15px;
     }
     
     .transport-icon img {
-        width: 229px; /* Уменьшили размер */
-        height: 144px; /* Уменьшили размер */
+        width: 200px;
+        height: 125px;
         object-fit: contain;
     }
     
     .transport-icon2 {
-                position: absolute;
+        position: absolute;
         z-index: 2;
-        top: 3px;
-        right: -56px;
+        top: 10px;
+        right: -40px;
     }
     
     .transport-icon3 {
         position: absolute;
         z-index: 2;
-        top: 29px; /* Изменено с 117px */
-        right: -29px;
+        top: 40px;
+        right: -15px;
     }
     
     .transport-icon2 img {
-        width: 170px; /* Уменьшили размер */
-        height: 103px; /* Уменьшили размер */
+        width: 150px;
+        height: 90px;
         object-fit: contain;
     }
     
     .transport-icon3 img {
-        width: 214px; /* Уменьшили размер */
-        height: 130px; /* Уменьшили размер */
+        width: 180px;
+        height: 110px;
         object-fit: contain;
     }
     
@@ -280,26 +295,32 @@
         font-weight: 500;
         font-size: 20px;
         color: #3F3F3F;
-        line-height: 100%;
-        margin: 40px 0 40px 0; /* Уменьшил отступы */
+        line-height: 130%;
+        margin: 40px 20px 30px 20px; /* Отступы по бокам */
+        padding: 0;
+        box-sizing: border-box;
     }
     
     .delivery-navigation-buttons {
         display: flex;
         justify-content: center;
-        margin: 25px auto 0px auto; /* Уменьшил отступы */
+        margin: 25px auto 0px auto;
         width: 100%;
-        max-width: 353px;
+        max-width: calc(100vw - 40px);
         gap: 15px;
+        padding: 0 20px;
+        box-sizing: border-box;
     }
     
     .delivery-navigation-buttons-multi {
         display: flex;
         justify-content: center;
-        margin: 20px auto 30px auto; /* Уменьшил отступы */
+        margin: 25px auto 30px auto;
         width: 100%;
-        max-width: 353px;
+        max-width: calc(100vw - 40px);
         gap: 15px;
+        padding: 0 20px;
+        box-sizing: border-box;
     }
     
     .delivery-nav-button {
@@ -321,46 +342,106 @@
     }
 }
 
-/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+
+    
+    .delivery-card {
+        width: calc(100vw - 40px);
+        min-height: 158px;
+    }
+    
+    .delivery-type-title{
+        margin-top: 28px;
+    }
+    
+    .delivery-content {
+        top: 40px;
+        left: 18px;
+    }
+    
+    .title2 {
+        font-size: 18px;
+        margin: 35px 15px 25px 15px;
+    }
+    
+    .delivery-navigation-buttons,
+    .delivery-navigation-buttons-multi {
+        padding: 0 15px;
+        max-width: calc(100vw - 30px);
+    }
+}
+
 @media (max-width: 375px) {
-    .delivery-types-container {
-        max-width: 100%;
+    .delivery-carousel,
+    .delivery-carousel-multi {
+        padding: 0 10px;
+        gap: 10px;
     }
     
     .delivery-card {
-        min-width: 320px;
-        width: 320px;
-        height: 145px; /* Пропорционально уменьшил */
-    }
-    
-    .delivery-card:not(:last-child) {
-        margin-right: 15px;
-    }
-
-    .delivery-grid {
-        display: block;
-        width:320px;
-        overflow: hidden;
+        width: calc(100vw - 20px);
+        min-height: 150px;
+        padding: 15px;
     }
     
     .circle-bg {
-        left: 310px;
-        width: 220px;
-        height: 220px;
+        left: calc(100% - 80px);
+        width: 160px;
+        height: 180px;
+    }
+    
+    .transport-icon {
+        top: 10px;
+        right: -10px;
     }
     
     .transport-icon img {
-        width: 250px;
-        height: 155px;
+        width: 150px;
+        height: 95px;
+    }
+    
+    .transport-icon2 {
+        top: 5px;
+        right: -25px;
+    }
+    
+    .transport-icon3 {
+        top: 30px;
+        right: -8px;
     }
     
     .transport-icon2 img {
-        width: 180px;
-        height: 115px;
+        width: 115px;
+        height: 70px;
     }
     
     .transport-icon3 img {
-        width: 250px;
-        height: 150px;
+        width: 135px;
+        height: 80px;
+    }
+    
+    .delivery-content {
+        top: 35px;
+        left: 15px;
+    }
+    
+    .delivery-type-title {
+        font-size: 18px;
+    }
+    
+    .title2 {
+        font-size: 16px;
+        margin: 30px 10px 20px 10px;
+    }
+    
+    .delivery-navigation-buttons,
+    .delivery-navigation-buttons-multi {
+        padding: 0 10px;
+        max-width: calc(100vw - 20px);
+    }
+    
+    .delivery-nav-button {
+        width: 45px;
+        height: 45px;
     }
 }

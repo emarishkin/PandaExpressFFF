@@ -1,3 +1,4 @@
+
 import type { FC } from "react";
 import { useState, useEffect } from "react";
 import './WhatWeOffer.css';
@@ -56,38 +57,31 @@ export const WhatWeOffer: FC = () => {
     }, []);
 
     const nextSlide = () => {
-        setCurrentIndex((prev) => (prev + 1) % offers.length);
+        setCurrentIndex((prev) => prev >= offers.length - 1 ? 0 : prev + 1);
     };
 
     const prevSlide = () => {
-        setCurrentIndex((prev) => (prev - 1 + offers.length) % offers.length);
-    };
-
-    const getCardWidth = () => {
-        if (window.innerWidth <= 375) return 280;
-        if (window.innerWidth <= 480) return 320;
-        return 353;
-    };
-
-    const getGap = () => {
-        if (window.innerWidth <= 375) return 12;
-        if (window.innerWidth <= 480) return 15;
-        return 20;
+        setCurrentIndex((prev) => prev <= 0 ? offers.length - 1 : prev - 1);
     };
 
     const getTransformValue = () => {
         if (isMobile) {
-            const cardWidth = getCardWidth();
-            const gap = getGap();
+            // На мобилках карточка занимает почти весь экран (100vw - 40px)
+            const cardWidth = window.innerWidth - 40; // 20px слева + 20px справа
+            const gap = 20; // фиксированный gap как в CSS
             return `translateX(-${currentIndex * (cardWidth + gap)}px)`;
         } else {
-            return `translateX(-${currentIndex * 703}px)`;
+            // Десктопная логика
+            const cardWidth = 663;
+            const gap = 40;
+            return `translateX(-${currentIndex * (cardWidth + gap)}px)`;
         }
     };
 
     return (
         <>
             <section className="what-we-offer-section">
+                <div className="what-we-offer-container">
                 <div className="what-we-offer-header">
                     <h2 className="section-title"><span>ЧТО МЫ</span> ПРЕДЛАГАЕМ?</h2>
                 </div>
@@ -107,6 +101,7 @@ export const WhatWeOffer: FC = () => {
                             ))}
                         </div>
                     </div>
+                </div>
                 </div>
             </section>
             

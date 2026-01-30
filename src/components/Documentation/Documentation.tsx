@@ -48,10 +48,13 @@ export const Documentation: FC = () => {
     };
 
     const getTransformValue = () => {
-        if (isMobile) {
-            return `translateX(-${currentIndex * 373}px)`;
-        }
-        return 'translateX(0)';
+    if (isMobile) {
+        // Получаем актуальную ширину карточки и gap
+        const cardWidth = document.querySelector('.document-card')?.clientWidth || 320;
+        const gap = 20; // Должно совпадать с gap в CSS
+        return `translateX(-${currentIndex * (cardWidth + gap)}px)`;
+    }
+    return 'translateX(0)';
     };
 
     return (

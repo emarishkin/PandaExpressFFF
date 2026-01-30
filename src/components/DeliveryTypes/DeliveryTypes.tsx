@@ -12,6 +12,8 @@ export const DeliveryTypes: FC = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [currentIndexMulti, setCurrentIndexMulti] = useState(0);
     const [isMobile, setIsMobile] = useState(false);
+    const [cardWidth, setCardWidth] = useState(320);
+    const [gap, setGap] = useState(20);
     
     const deliveryTypes = [
         {
@@ -54,7 +56,28 @@ export const DeliveryTypes: FC = () => {
 
     useEffect(() => {
         const checkMobile = () => {
-            setIsMobile(window.innerWidth <= 768);
+            const mobile = window.innerWidth <= 768;
+            setIsMobile(mobile);
+            
+            if (mobile) {
+                // Рассчитываем ширину карточки в зависимости от размера экрана
+                const screenWidth = window.innerWidth;
+                let width, gapValue;
+                
+                if (screenWidth <= 375) {
+                    width = screenWidth - 20; // 100vw - 20px
+                    gapValue = 10;
+                } else if (screenWidth <= 480) {
+                    width = screenWidth - 40; // 100vw - 40px
+                    gapValue = 20;
+                } else {
+                    width = screenWidth - 40; // 100vw - 40px
+                    gapValue = 20;
+                }
+                
+                setCardWidth(width);
+                setGap(gapValue);
+            }
         };
         
         checkMobile();
@@ -81,14 +104,16 @@ export const DeliveryTypes: FC = () => {
 
     const getTransformValue = () => {
         if (isMobile) {
-            return `translateX(-${currentIndex * 373}px)`;
+            // Используем динамически рассчитанные значения
+            return `translateX(-${currentIndex * (cardWidth + gap)}px)`;
         }
         return 'translateX(0)';
     };
 
     const getTransformValueMulti = () => {
         if (isMobile) {
-            return `translateX(-${currentIndexMulti * 373}px)`;
+            // Используем динамически рассчитанные значения
+            return `translateX(-${currentIndexMulti * (cardWidth + gap)}px)`;
         }
         return 'translateX(0)';
     };
