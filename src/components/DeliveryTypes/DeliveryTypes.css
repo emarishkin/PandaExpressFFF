@@ -255,11 +255,11 @@
         right: -40px;
     }
     
-    .transport-icon3 {
+        .transport-icon3 {
         position: absolute;
         z-index: 2;
-        top: 40px;
-        right: -15px;
+        top: 49px;
+        right: -24px;
     }
     
     .transport-icon2 img {
@@ -371,77 +371,3 @@
     }
 }
 
-@media (max-width: 375px) {
-    .delivery-carousel,
-    .delivery-carousel-multi {
-        padding: 0 10px;
-        gap: 10px;
-    }
-    
-    .delivery-card {
-        width: calc(100vw - 20px);
-        min-height: 150px;
-        padding: 15px;
-    }
-    
-    .circle-bg {
-        left: calc(100% - 80px);
-        width: 160px;
-        height: 180px;
-    }
-    
-    .transport-icon {
-        top: 10px;
-        right: -10px;
-    }
-    
-    .transport-icon img {
-        width: 150px;
-        height: 95px;
-    }
-    
-    .transport-icon2 {
-        top: 5px;
-        right: -25px;
-    }
-    
-    .transport-icon3 {
-        top: 30px;
-        right: -8px;
-    }
-    
-    .transport-icon2 img {
-        width: 115px;
-        height: 70px;
-    }
-    
-    .transport-icon3 img {
-        width: 135px;
-        height: 80px;
-    }
-    
-    .delivery-content {
-        top: 35px;
-        left: 15px;
-    }
-    
-    .delivery-type-title {
-        font-size: 18px;
-    }
-    
-    .title2 {
-        font-size: 16px;
-        margin: 30px 10px 20px 10px;
-    }
-    
-    .delivery-navigation-buttons,
-    .delivery-navigation-buttons-multi {
-        padding: 0 10px;
-        max-width: calc(100vw - 20px);
-    }
-    
-    .delivery-nav-button {
-        width: 45px;
-        height: 45px;
-    }
-}

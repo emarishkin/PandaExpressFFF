@@ -269,7 +269,7 @@
         min-width: calc(100vw - 40px); /* 20px слева + 20px справа */
         max-width: calc(100vw - 40px);
         width: calc(100vw - 40px);
-        height: 354px;
+        height: 310px;
         border-radius: 20px;
         padding: 30px 25px;
         display: flex;
@@ -406,6 +406,10 @@
 
     .section-title {
         max-width: 280px;
+    }
+
+    .offer-title{
+        font-size: 16px;
     }
     
     .offers-carousel-container {

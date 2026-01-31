@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import './Documentation.css';
 import tetradka from '../../assets/images/tetradka.svg';
 import VectorL from '../../assets/images/VectorL.svg';
@@ -8,6 +8,7 @@ import VectorR from '../../assets/images/VectorR.svg';
 export const Documentation: FC = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isMobile, setIsMobile] = useState(false);
+    const cardRef = useRef<HTMLDivElement>(null);
     
     const documents = [
         {
@@ -48,13 +49,12 @@ export const Documentation: FC = () => {
     };
 
     const getTransformValue = () => {
-    if (isMobile) {
-        // Получаем актуальную ширину карточки и gap
-        const cardWidth = document.querySelector('.document-card')?.clientWidth || 320;
-        const gap = 20; // Должно совпадать с gap в CSS
-        return `translateX(-${currentIndex * (cardWidth + gap)}px)`;
-    }
-    return 'translateX(0)';
+        if (isMobile) {
+            const cardWidth = cardRef.current?.offsetWidth || window.innerWidth - 40;
+            const gap = 20;
+            return `translateX(-${currentIndex * (cardWidth + gap)}px)`;
+        }
+        return 'translateX(0)';
     };
 
     return (
@@ -69,7 +69,11 @@ export const Documentation: FC = () => {
                             style={{ transform: getTransformValue() }}
                         >
                             {documents.map((doc, index) => (
-                                <div key={index} className="document-card">
+                                <div 
+                                    key={index} 
+                                    ref={index === 0 ? cardRef : null}
+                                    className="document-card"
+                                >
                                     <img src={tetradka} alt="тетрадка" />
                                     <h3 className="document-title">{doc.title}</h3>
                                     <p className="document-description">{doc.description}</p>

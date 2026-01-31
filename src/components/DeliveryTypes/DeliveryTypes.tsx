@@ -60,18 +60,17 @@ export const DeliveryTypes: FC = () => {
             setIsMobile(mobile);
             
             if (mobile) {
-                // Рассчитываем ширину карточки в зависимости от размера экрана
                 const screenWidth = window.innerWidth;
                 let width, gapValue;
                 
                 if (screenWidth <= 375) {
-                    width = screenWidth - 20; // 100vw - 20px
+                    width = screenWidth - 20; 
                     gapValue = 10;
                 } else if (screenWidth <= 480) {
-                    width = screenWidth - 40; // 100vw - 40px
+                    width = screenWidth - 40; 
                     gapValue = 20;
                 } else {
-                    width = screenWidth - 40; // 100vw - 40px
+                    width = screenWidth - 40; 
                     gapValue = 20;
                 }
                 
@@ -104,7 +103,6 @@ export const DeliveryTypes: FC = () => {
 
     const getTransformValue = () => {
         if (isMobile) {
-            // Используем динамически рассчитанные значения
             return `translateX(-${currentIndex * (cardWidth + gap)}px)`;
         }
         return 'translateX(0)';
@@ -112,7 +110,6 @@ export const DeliveryTypes: FC = () => {
 
     const getTransformValueMulti = () => {
         if (isMobile) {
-            // Используем динамически рассчитанные значения
             return `translateX(-${currentIndexMulti * (cardWidth + gap)}px)`;
         }
         return 'translateX(0)';
