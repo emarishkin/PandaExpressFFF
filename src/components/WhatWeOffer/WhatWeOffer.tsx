@@ -2,11 +2,15 @@
 import type { FC } from "react";
 import { useState, useEffect } from "react";
 import './WhatWeOffer.css';
-import VectorL from '../../assets/images/VectorL.png';
-import VectorR from '../../assets/images/VectorR.png';
-import discountImg from '../../assets/images/discountImg.png';
-import boxes from '../../assets/images/boxes.png';
-import handshake from '../../assets/images/handshake.png';
+import VectorL from '../../assets/images/VectorL.svg';
+import VectorR from '../../assets/images/VectorR.svg';
+import discountImg from '../../assets/images/discountImg.svg';
+import boxes from '../../assets/images/boxes.svg';
+import handshake from '../../assets/images/handshake.svg';
+import boxesLupa from '../../assets/images/boxesLupa.svg';
+import copyList from '../../assets/images/copyList.svg';
+
+
 
 export const WhatWeOffer: FC = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,17 +33,17 @@ export const WhatWeOffer: FC = () => {
             description: <><span>Организуем доставку</span> от указанных вами контрагентов.</>
         },
         {
-            icon: discountImg,
+            icon: boxesLupa,
             title: "Поиск товара",
             description: <>Найдем <span>надёжных производителей</span> под ваши требования.</>
         },
         {
-            icon: boxes,
+            icon: copyList,
             title: "Документация",
             description: <>Подготовим <span>все бумаги</span> для <span>таможенного оформления.</span></>
         },
         {
-            icon: handshake,
+            icon: boxesLupa,
             title: "Контроль сроков",
             description: <>Отслеживаем груз на <span>каждом этапе.</span></>
         }

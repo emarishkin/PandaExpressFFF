@@ -1,6 +1,6 @@
 import type { FC } from "react";
-import checkboxWhite from '../../assets/images/checkboxWhite.png'
-import znak from '../../assets/images/znak.png'
+import checkboxWhite from '../../assets/images/checkboxWhite.svg'
+import znak from '../../assets/images/znak.svg'
 import './ButtonPanda.css'
 
 interface ButtonPandaProps {

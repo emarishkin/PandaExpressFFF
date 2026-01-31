@@ -1,9 +1,9 @@
 import type { FC } from "react";
 import { useState, useEffect } from "react";
 import './Documentation.css';
-import tetradka from '../../assets/images/tetradka.png';
-import VectorL from '../../assets/images/VectorL.png';
-import VectorR from '../../assets/images/VectorR.png';
+import tetradka from '../../assets/images/tetradka.svg';
+import VectorL from '../../assets/images/VectorL.svg';
+import VectorR from '../../assets/images/VectorR.svg';
 
 export const Documentation: FC = () => {
     const [currentIndex, setCurrentIndex] = useState(0);

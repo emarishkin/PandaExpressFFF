@@ -1,8 +1,8 @@
 import type { FC } from "react";
-import LogoFooterF from '../../assets/images/LogoFooterF.png'
-import Telegram from  '../../assets/images/Telegram.png'
-import Vk from '../../assets/images/Vk.png'
-import YouTube from '../../assets/images/YouTube.png'
+import LogoFooterF from '../../assets/images/LogoFooterF.svg'
+import Telegram from  '../../assets/images/Telegram.svg'
+import Vk from '../../assets/images/Vk.svg'
+import YouTube from '../../assets/images/YouTube.svg'
 import '../Footer/Footer.css'
 
 export const Footer:FC = () => {

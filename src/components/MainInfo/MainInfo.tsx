@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import AirBus from '../../assets/images/AirBus.png'
-import LogoPangaW from '../../assets/images/LogoPangaW.png'
-import checkbox from '../../assets/images/checkbox.png'
+import LogoPangaW from '../../assets/images/LogoPangaW.svg'
+import checkbox from '../../assets/images/checkbox.svg'
 import count1 from '../../assets/images/1.png'
 import count2 from '../../assets/images/2.png'
 import count3 from '../../assets/images/3.png'
