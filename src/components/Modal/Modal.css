@@ -251,7 +251,7 @@
 
     .modal-content {
         width: 100%;
-        max-width: 353px;
+        max-width: 450px;
         min-height: 440px;
         height: auto;
         padding: 30px 20px;
@@ -343,22 +343,25 @@
     .modal-content {
         max-width: 100%;
         min-height: 440px;
-        padding: 25px 15px;
+        padding: 25px 20px;
         border-radius: 20px;
     }
 
     .modal-header {
-        gap: 20px;
+        display: flex;
+        align-items: start;
+        gap: 25px;
         margin-bottom: 25px;
     }
 
     .modal-title {
-        font-size: 18px;
+        font-size: 20px;
         text-align: start;
     }
 
     .modal-description {
-        font-size: 13px;
+        text-align: justify;
+        font-size: 16px;
         line-height: 130%;
     }
 
@@ -367,18 +370,22 @@
     }
 
     .form-input {
-        height: 50px;
+        height: 61px;
         padding: 0 15px;
         font-size: 13px;
     }
 
     .social-toggle {
-        height: 50px;
+        height: 60px;
+    }
+
+    .social-label {
+        font-size: 16px;
     }
 
     .social-option label {
         height: 30px;
-        font-size: 13px;
+        font-size: 16px;
     }
 
     .social-slider {
@@ -390,8 +397,8 @@
     }
 
     .custom-checkbox {
-        width: 30px;
-        height: 30px;
+        width: 34px;
+        height: 34px;
     }
 
     .checkmark {
@@ -405,8 +412,8 @@
     }
 
     .modal-submit {
-        height: 55px;
-        font-size: 15px;
+        height: 68px;
+        font-size: 18px;
         border-radius: 15px;
     }
 
