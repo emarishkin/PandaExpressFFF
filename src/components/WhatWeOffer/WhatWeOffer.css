@@ -69,7 +69,6 @@
 .offers-carousel-container {
     position: relative;
     width: calc(100vw - 197px); 
-    overflow: visible; 
 }
 
 .offers-carousel-wrapper {
