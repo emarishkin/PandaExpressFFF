@@ -3,7 +3,6 @@
     max-width: 1519px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 20px;
     box-sizing: border-box;
 }
 
@@ -64,11 +63,10 @@
 
 @media (max-width: 1600px) {
     .documentation-container {
-        max-width: 1200px;
+        padding: 0px 40px;
     }
     
     .document-card {
-        max-width: 580px;
         padding: 35px 45px 45px 45px;
     }
     
@@ -79,12 +77,8 @@
 }
 
 @media (max-width: 1400px) {
-    .documentation-container {
-        max-width: 1100px;
-    }
     
     .document-card {
-        max-width: 530px;
         padding: 30px 40px 40px 40px;
     }
     

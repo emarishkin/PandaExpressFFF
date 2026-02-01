@@ -60,7 +60,6 @@ export const Modal: FC<ModalProps> = ({ isOpen, onClose }) => {
         }));
     };
 
-    // Функция отправки в Telegram
     const sendToTelegram = async () => {
         const message = `
             📞 *Новая заявка на консультацию!*
@@ -105,16 +104,13 @@ export const Modal: FC<ModalProps> = ({ isOpen, onClose }) => {
         setIsSubmitting(true);
         
         try {
-            // Отправляем данные в Telegram
             await sendToTelegram();
             
-            // Можно также отправить на бэкенд или другую систему
             console.log('Данные формы:', formData);
             
             alert('Заявка успешно отправлена! С вами свяжутся в ближайшее время.');
             onClose();
             
-            // Сброс формы
             setFormData({
                 name: '',
                 phone: '',

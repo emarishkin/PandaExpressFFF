@@ -1,9 +1,9 @@
 import type { FC } from "react";
 import { useState, useEffect } from "react";
 import './DeliveryTypes.css';
-import auto from '../../assets/images/auto.svg';
-import sea from '../../assets/images/sea.svg';
-import train from '../../assets/images/train.svg';
+import auto from '../../assets/images/auto.png';
+import sea from '../../assets/images/sea.png';
+import train from '../../assets/images/train.png';
 import circleBg from '../../assets/images/circleBg.svg'; 
 import VectorL from '../../assets/images/VectorL.svg';
 import VectorR from '../../assets/images/VectorR.svg';
