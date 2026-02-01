@@ -246,15 +246,13 @@
     
     .offers-carousel-container {
         width: 100vw;
-        overflow: hidden;
         position: relative;
         margin: 0 auto;
-        padding-left: 20px; /* Отступ для первого элемента */
+        padding-left: 20px; 
     }
     
     .offers-carousel-wrapper {
         width: 100%;
-        overflow: hidden;
         position: relative;
     }
     
