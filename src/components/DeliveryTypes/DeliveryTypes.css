@@ -135,12 +135,17 @@
     }
 }
 
+/* max-width: calc(100vw - 40px); */
+ 
 @media (max-width: 1200px) {
 
     .delivery-grid {
-        max-width: 488px;
         grid-template-columns: repeat(1, 1fr);
         margin: 0 auto;
+    }
+
+    .delivery-card {
+        max-width: calc(100vw - 40px);
     }
 }
 
