@@ -1,6 +1,7 @@
 
 .what-we-offer-section {
     position: relative;
+    overflow: hidden;
 }
 
 .what-we-offer-container{
@@ -256,14 +257,13 @@
         position: relative;
     }
     
-    /* Ключевые изменения для мобильного скролла */
     .offers-carousel {
         gap: 20px;
-        padding-right: 20px; /* Отступ справа для последнего элемента */
+        padding-right: 20px; 
     }
     
     .offer-card {
-        min-width: calc(100vw - 40px); /* 20px слева + 20px справа */
+        min-width: calc(100vw - 40px); 
         max-width: calc(100vw - 40px);
         width: calc(100vw - 40px);
         height: 310px;
@@ -390,7 +390,6 @@
     }
 }
 
-/* Для очень маленьких мобилок (375px) */
 @media (max-width: 375px) {
     .what-we-offer-section {
         padding: 25px 0 0 0;
