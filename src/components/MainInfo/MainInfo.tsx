@@ -54,7 +54,7 @@ export const MainInfo:FC<MainInfoProps> = ({onOpenModal}) => {
                     <span>Скорость</span><br />обработки заявки
                 </p>
                 <p>
-                    <span>Индивидуальный</span>подход<br />и <span>минимизация</span> расходов
+                    <span>Индивидуальный</span> подход<br />и <span>минимизация</span> расходов
                 </p>
                 <p>
                     <span>Прозрачность</span><br />цены
@@ -69,7 +69,7 @@ export const MainInfo:FC<MainInfoProps> = ({onOpenModal}) => {
                 <div className="guarantee-item">
                     <img className="guarantee-number2" src={count2} alt="2" />
                     <p>
-                        <span>Индивидуальный</span>подход<br />и <span>минимизация</span> расходов
+                        <span>Индивидуальный</span> подход<br />и <span>минимизация</span> расходов
                     </p>
                 </div>
                 <div className="guarantee-item">
