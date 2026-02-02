@@ -3,6 +3,8 @@ import checkboxWhite from '../../assets/images/checkboxWhite.svg'
 import znak from '../../assets/images/znak.svg'
 import './ButtonPanda.css'
 
+//1
+
 interface ButtonPandaProps {
     onOpenModal: () => void;
 }
