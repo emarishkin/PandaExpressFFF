@@ -42,9 +42,14 @@
 
 .socials-links{
     display: flex;
-    width: 170px;
+    width: 187px;
     height: 44px;
     gap: 19px;
+}
+
+.socials-block p {
+    text-align: end;
+    align-self: end;
 }
 
 .footer-footer{
@@ -107,12 +112,16 @@
         height: 42px;
     }
     
-    .logo-socials .socials-block {
-        align-self: flex-end;
-    }
-    
     .socials-block {
         gap: 10px;
+    }
+
+    .socials-block p {
+        text-align: center;
+    }
+
+    .socials-links {
+        width: 185px;
     }
     
     .footer-footer {
