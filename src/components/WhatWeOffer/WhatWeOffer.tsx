@@ -70,13 +70,11 @@ export const WhatWeOffer: FC = () => {
 
     const getTransformValue = () => {
         if (isMobile) {
-            // На мобилках карточка занимает почти весь экран (100vw - 40px)
-            const cardWidth = window.innerWidth - 40; // 20px слева + 20px справа
-            const gap = 20; // фиксированный gap как в CSS
+            const cardWidth = window.innerWidth - 40; 
+            const gap = 20; 
             return `translateX(-${currentIndex * (cardWidth + gap)}px)`;
         } else {
-            // Десктопная логика
-            const cardWidth = 663;
+            const cardWidth = 739;
             const gap = 40;
             return `translateX(-${currentIndex * (cardWidth + gap)}px)`;
         }

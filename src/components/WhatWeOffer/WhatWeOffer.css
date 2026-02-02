@@ -67,8 +67,8 @@
 }
 
 .offers-carousel-container {
+    overflow: hidden;
     position: relative;
-    width: calc(100vw - 197px); 
 }
 
 .offers-carousel-wrapper {
@@ -84,7 +84,7 @@
 
 .offer-card {
     position: relative;
-    min-width: 663px;
+    min-width: 739px;
     height: 269px; 
     background: #FFFFFF;
     border-radius: 30px;
@@ -208,9 +208,9 @@
         padding-right: 100px;
     }
     
-    .offers-carousel-container {
+    /* .offers-carousel-container {
         width: calc(100vw - 100px);
-    }
+    } */
 }
 
 @media (max-width: 768px) {
