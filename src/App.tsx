@@ -7,6 +7,7 @@ import { MainInfo } from "./components/MainInfo/MainInfo"
 import { WhatWeOffer } from "./components/WhatWeOffer/WhatWeOffer"
 import { WhyWhite } from "./components/WhyWhite/WhyWhite"
 import { Modal } from "./components/Modal/Modal"
+import { Reviews } from "./components/Reviews/Reviews"
 
 function App() {
 
@@ -24,7 +25,9 @@ function App() {
       <Documentation />
       <ButtonPanda onOpenModal={openModal} />
       <DeliveryTypes />
+      <Reviews />
       <Footer />
+      
       <Modal isOpen={isModalOpen} onClose={closeModal} />
     </>
   )
