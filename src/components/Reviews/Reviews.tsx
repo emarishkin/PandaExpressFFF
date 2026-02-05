@@ -97,10 +97,12 @@ export const Reviews:FC = () => {
                             {reviews.map((review, index) => (
                                 <div key={index} className="review-card">
                                     <div className="review-card-header">
-                                        <img src={review.icon} alt="Иконка" className="icon-image" />
+                                        <div>
+                                            <img src={review.icon} alt="Иконка" className="icon-image-reviews" />
+                                        </div>
                                         <div>
                                             <h3 className="review-title">{review.title}</h3>
-                                            <p className="review-status">{review.status}</p>
+                                            <p className="review-status">Статус: {review.status}</p>
                                         </div>
                                     </div>
                                     <div>
