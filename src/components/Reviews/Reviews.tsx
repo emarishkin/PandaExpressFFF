@@ -8,11 +8,10 @@ import avatar4 from '../../assets/images/avatar4.svg'
 import starsReviews from '../../assets/images/starsReviews.svg'
 import './Reviews.css'
 
-
 export const Reviews:FC = () => {
-
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isMobile, setIsMobile] = useState(false);
+    const [screenWidth, setScreenWidth] = useState(0);
 
     const reviews = [
         {
@@ -21,7 +20,7 @@ export const Reviews:FC = () => {
             status:'Партнер',
             imgStars:starsReviews ,
             date:'21.12.2025',
-            description:'Заказал электровелосипеды из Китая 29.03.2025. ТК Панда, из Москвы груз до Чебоксар с 2.04.25 по 6.04.25 доехал, привезли до меня 9.04.25. Коробки большие и тяжёлые в целости и сохранности доехали, спасибо водителю, а также сотрудникам компании. '
+            description:'Заказал электровелосипеды из Китая 29.03.2025. ТК Панда, из Москвы груз до Чебоксар с 2.04.25 по 6.04.25 доехал, привезли до меня 9.04.25. Коробки больщие и тяжёлые в целости и сохранности доехали, спасибо водителю, а также сотрудникам компании. '
         },
         {
             icon: avatar2,
@@ -29,7 +28,7 @@ export const Reviews:FC = () => {
             status:'Партнер',
             imgStars:starsReviews ,
             date:'21.12.2025',
-            description:'Заказал электровелосипеды из Китая 29.03.2025. ТК Панда, из Москвы груз до Чебоксар с 2.04.25 по 6.04.25 доехал, привезли до меня 9.04.25. Коробки большие и тяжёлые в целости и сохранности доехали, спасибо водителю, а также сотрудникам компании. '
+            description:'Заказал электровелосипеды из Китая 29.03.2025. ТК Панда, из Москвы груз до Чебоксар с 2.04.25 по 6.04.25 доехал, привезли до меня 9.04.25. Коробки больщие и тяжёлые в целости и сохранности доехали, спасибо водителю, а также сотрудникам компании. '
         },
         {
             icon: avatar3,
@@ -37,7 +36,7 @@ export const Reviews:FC = () => {
             status:'Партнер',
             imgStars:starsReviews ,
             date:'21.12.2025',
-            description: 'Заказал электровелосипеды из Китая 29.03.2025. ТК Панда, из Москвы груз до Чебоксар с 2.04.25 по 6.04.25 доехал, привезли до меня 9.04.25. Коробки большие и тяжёлые в целости и сохранности доехали, спасибо водителю, а также сотрудникам компании. '
+            description: 'Заказал электровелосипеды из Китая 29.03.2025. ТК Панда, из Москвы груз до Чебоксар с 2.04.25 по 6.04.25 доехал, привезли до меня 9.04.25. Коробки больщие и тяжёлые в целости и сохранности доехали, спасибо водителю, а также сотрудникам компании. '
         },
         {
             icon:avatar4 ,
@@ -45,13 +44,15 @@ export const Reviews:FC = () => {
             status:'Партнер',
             imgStars:starsReviews ,
             date:'21.12.2025',
-            description:'Заказал электровелосипеды из Китая 29.03.2025. ТК Панда, из Москвы груз до Чебоксар с 2.04.25 по 6.04.25 доехал, привезли до меня 9.04.25. Коробки большие и тяжёлые в целости и сохранности доехали, спасибо водителю, а также сотрудникам компании. '
+            description:'Заказал электровелосипеды из Китая 29.03.2025. ТК Панда, из Москвы груз до Чебоксар с 2.04.25 по 6.04.25 доехал, привезли до меня 9.04.25. Коробки больщие и тяжёлые в целости и сохранности доехали, спасибо водителю, а также сотрудникам компании. '
         }
     ];
 
     useEffect(() => {
         const checkMobile = () => {
-            setIsMobile(window.innerWidth <= 768);
+            const width = window.innerWidth;
+            setScreenWidth(width);
+            setIsMobile(width <= 768);
         };
         
         checkMobile();
@@ -70,9 +71,19 @@ export const Reviews:FC = () => {
 
     const getTransformValue = () => {
         if (isMobile) {
-            const cardWidth = window.innerWidth - 40; 
-            const gap = 20; 
-            return `translateX(-${currentIndex * (cardWidth + gap)}px)`;
+            let cardWidth = screenWidth - 40; 
+            
+            if (screenWidth <= 480) {
+                cardWidth = screenWidth - 30; 
+            }
+            
+            if (screenWidth <= 375) {
+                cardWidth = screenWidth - 20; 
+            }
+            
+            const gap = 20;
+            const offset = screenWidth <= 375 ? -2 : screenWidth <= 480 ? -1 : 0;
+            return `translateX(-${currentIndex * (cardWidth + gap) + offset}px)`;
         } else {
             const cardWidth = 739;
             const gap = 40;
@@ -82,43 +93,44 @@ export const Reviews:FC = () => {
      
     return (
         <>
-          <section className="reviews-section">
+            <section className="reviews-section">
                 <div className="reviews-container">
-                <div className="reviews-header">
-                    <h2 className="section-title"><span>ОТЗЫВЫ</span> ЗАКАЗЧИКОВ</h2>
-                </div>
+                    <div className="reviews-header">
+                        <h2 className="section-title"><span>ОТЗЫВЫ</span> ЗАКАЗЧИКОВ</h2>
+                    </div>
 
-                <div className="reviews-carousel-container">
-                    <div className="reviews-carousel-wrapper">
-                        <div 
-                            className="reviews-carousel" 
-                            style={{ transform: getTransformValue() }}
-                        >
-                            {reviews.map((review, index) => (
-                                <div key={index} className="review-card">
-                                    <div className="review-card-header">
-                                        <div>
-                                            <img src={review.icon} alt="Иконка" className="icon-image-reviews" />
+                    <div className="reviews-carousel-container">
+                        <div className="reviews-carousel-wrapper">
+                            <div 
+                                className="reviews-carousel" 
+                                style={{ transform: getTransformValue() }}
+                            >
+                                {reviews.map((review, index) => (
+                                    <div key={index} className="review-card">
+                                        <div className="review-card-header">
+                                            <div>
+                                                <img src={review.icon} alt="Иконка" className="icon-image-reviews" />
+                                            </div>
+                                            <div>
+                                                <h3 className="review-title">{review.title}</h3>
+                                                <p className="review-status">Статус: {review.status}</p>
+                                            </div>
                                         </div>
                                         <div>
-                                            <h3 className="review-title">{review.title}</h3>
-                                            <p className="review-status">Статус: {review.status}</p>
+                                            <img src={review.imgStars} alt="Звезды" className="icon-imageStars" />
+                                            <p className="review-data">{review.date}</p>
+                                        </div>
+                                        <div>
+                                            <p className="review-description">{review.description}</p>
                                         </div>
                                     </div>
-                                    <div>
-                                        <img src={review.imgStars} alt="Звезды" className="icon-imageStars" />
-                                        <p className="review-data">{review.date}</p>
-                                    </div>
-                                    <div>
-                                        <p className="review-description">{review.description}</p>
-                                    </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
-                </div>
             </section>
+            
             <div className="navigation-buttons">
                 <button className="nav-button prev-button" onClick={prevSlide}>
                     <img src={VectorL} alt="Предыдущий" />
