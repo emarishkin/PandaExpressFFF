@@ -116,6 +116,10 @@
         gap: 10px;
     }
 
+    .socials-block p{
+        align-self: center;
+    }
+
     .socials-block p {
         text-align: center;
     }
