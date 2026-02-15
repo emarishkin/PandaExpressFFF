@@ -14,7 +14,7 @@ const TELEGRAM_CHAT_ID = '-5239862058';
 export const Modal: FC<ModalProps> = ({ isOpen, onClose }) => {
     const [formData, setFormData] = useState({
         name: '',
-        phone: '',
+        phone: '+7',
         social: 'telegram',
         callMe: true
     });
@@ -40,10 +40,35 @@ export const Modal: FC<ModalProps> = ({ isOpen, onClose }) => {
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value, type, checked } = e.target;
-        setFormData(prev => ({
-            ...prev,
-            [name]: type === 'checkbox' ? checked : value
-        }));
+        
+        if (name === 'phone') {
+            const phoneRegex = /^[0-9+\-\s()]*$/;
+            
+            if (value === '' || value === '+') {
+                setFormData(prev => ({
+                    ...prev,
+                    [name]: '+7'
+                }));
+            } else if (phoneRegex.test(value)) {
+                if (!value.startsWith('+7')) {
+                    const cleanedValue = value.replace(/[^0-9]/g, '');
+                    setFormData(prev => ({
+                        ...prev,
+                        [name]: '+7' + cleanedValue
+                    }));
+                } else {
+                    setFormData(prev => ({
+                        ...prev,
+                        [name]: value
+                    }));
+                }
+            }
+        } else {
+            setFormData(prev => ({
+                ...prev,
+                [name]: type === 'checkbox' ? checked : value
+            }));
+        }
     };
 
     const handleSocialChange = (social: string) => {
@@ -103,6 +128,13 @@ export const Modal: FC<ModalProps> = ({ isOpen, onClose }) => {
         e.preventDefault();
         setIsSubmitting(true);
         
+        const phoneDigits = formData.phone.replace(/\D/g, '');
+        if (phoneDigits.length < 11) {
+            alert('Пожалуйста, введите полный номер телефона');
+            setIsSubmitting(false);
+            return;
+        }
+        
         try {
             await sendToTelegram();
             
@@ -113,7 +145,7 @@ export const Modal: FC<ModalProps> = ({ isOpen, onClose }) => {
             
             setFormData({
                 name: '',
-                phone: '',
+                phone: '+7',
                 social: 'telegram',
                 callMe: true
             });
@@ -154,17 +186,28 @@ export const Modal: FC<ModalProps> = ({ isOpen, onClose }) => {
                         />
                     </div>
 
-                    <div className="form-group">
-                        <input
-                            type="tel"
-                            name="phone"
-                            className="form-input"
-                            placeholder="Номер телефона"
-                            value={formData.phone}
-                            onChange={handleInputChange}
-                            required
-                            disabled={isSubmitting}
-                        />
+                    <div className="form-group phone-input-group">
+                        <div className="phone-input-wrapper">
+                            <span className="phone-prefix">+7</span>
+                            <input
+                                type="tel"
+                                name="phone"
+                                className="form-input phone-input"
+                                placeholder="(999) 999-99-99"
+                                value={formData.phone.replace('+7', '')}
+                                onChange={(e) => {
+                                    const { value } = e.target;
+                                    const cleaned = value.replace(/[^\d]/g, '');
+                                    const limited = cleaned.slice(0, 10);
+                                    setFormData(prev => ({
+                                        ...prev,
+                                        phone: '+7' + limited
+                                    }));
+                                }}
+                                required
+                                disabled={isSubmitting}
+                            />
+                        </div>
                     </div>
 
                     <div className="social-group">

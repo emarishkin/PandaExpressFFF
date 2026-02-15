@@ -72,10 +72,38 @@
     font-size: 16px;
     color: #3F3F3F;
     outline: none;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .form-input::placeholder {
     color: #A9A9A9;
+}
+
+.phone-input-group {
+    width: 100%;
+}
+
+.phone-input-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.phone-prefix {
+    position: absolute;
+    left: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #3F3F3F;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.phone-input {
+    padding-left: 55px !important;
 }
 
 .social-group {
@@ -89,7 +117,7 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 100%;
-    color:rgba(183, 183, 183, 0.9);
+    color: rgba(183, 183, 183, 0.9);
 }
 
 .social-toggle {
@@ -205,7 +233,7 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 16px;
-    color:rgba(183, 183, 183, 0.9);
+    color: rgba(183, 183, 183, 0.9);
     cursor: pointer;
     line-height: 34px;
     user-select: none;
@@ -278,6 +306,15 @@
         height: 55px;
         padding: 0 20px;
         font-size: 14px;
+    }
+
+    .phone-prefix {
+        left: 20px;
+        font-size: 14px;
+    }
+
+    .phone-input {
+        padding-left: 45px !important;
     }
 
     .social-group {
@@ -373,6 +410,15 @@
         height: 61px;
         padding: 0 15px;
         font-size: 13px;
+    }
+
+    .phone-prefix {
+        left: 15px;
+        font-size: 13px;
+    }
+
+    .phone-input {
+        padding-left: 40px !important;
     }
 
     .social-toggle {
